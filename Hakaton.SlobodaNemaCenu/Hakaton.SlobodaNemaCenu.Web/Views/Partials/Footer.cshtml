@@ -1,0 +1,101 @@
+﻿@using Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits UmbracoViewPage
+
+@{
+    var homePage = Model.AncestorOrSelf<Home>();
+}
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer-wrap">
+            <div class="footer-nav">
+                @if (homePage.FooterSocialLinks != null && homePage.FooterSocialLinks.Any())
+                {
+                    <div class="icons">
+                        @foreach (var link in homePage.FooterSocialLinks)
+                        {
+                            var socialLink = (SocialMediaLink)link.Content;
+
+                            if (socialLink.SocialLinkType.Equals("Instagram") && socialLink.SocialLink != null)
+                            {
+                                <a href="@socialLink.SocialLink.Url" class="icon-link" target="@socialLink.SocialLink.Target">
+                                    <span class="icon icon-instagram">
+                                        <span class="sr-only">@socialLink.SocialLink.Name</span>
+                                    </span>
+                                </a>
+                            }
+
+                            if (socialLink.SocialLinkType.Equals("Facebook") && socialLink.SocialLink != null)
+                            {
+                                <a href="@socialLink.SocialLink.Url" class="icon-link" target="@socialLink.SocialLink.Target">
+                                    <span class="icon icon-facebook">
+                                        <span class="sr-only">@socialLink.SocialLink.Name</span>
+                                    </span>
+                                </a>
+                            }
+
+                            if (socialLink.SocialLinkType.Equals("LinkedIn") && socialLink.SocialLink != null)
+                            {
+                                <a href="@socialLink.SocialLink.Url" class="icon-link" target="@socialLink.SocialLink.Target">
+                                    <span class="icon icon-linkedin">
+                                        <span class="sr-only">@socialLink.SocialLink.Name</span>
+                                    </span>
+                                </a>
+                            }
+
+                            if (socialLink.SocialLinkType.Equals("Twitter") && socialLink.SocialLink != null)
+                            {
+                                <a href="@socialLink.SocialLink.Url" class="icon-link" target="@socialLink.SocialLink.Target">
+                                    <span class="icon icon-twitter">
+                                        <span class="sr-only">@socialLink.SocialLink.Name</span>
+                                    </span>
+                                </a>
+                            }
+                        }
+                    </div>
+                }
+                @if (homePage.FooterQuickLinks != null && homePage.FooterQuickLinks.Any())
+                {
+                    <nav class="nav footer-nav">
+                        <ul class="nav__list" role="menubar">
+                            @foreach (var link in homePage.FooterQuickLinks)
+                            {
+                                <li class="nav__item" role="menuitem">
+                                    <a class="nav__link" href="@link.Url" rel="noopener noreferrer">@link.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                }
+            </div>
+            @if (homePage.FooterLogo != null)
+            {
+                <a href="/" class="logo">
+                    <img class="logo__img" src="@homePage.FooterLogo.Url()" alt="@homePage.FooterLogo.Name">
+                </a>
+            }
+
+            @if (homePage.FooterEmailAddress != null || homePage.FooterButton != null)
+            {
+                <div class="footer-links">
+                    @if (homePage.FooterButton != null)
+                    {
+                        <a href="@homePage.FooterButton.Url" class="btn blue-btn" target="@homePage.FooterButton.Target">@homePage.FooterButton.Name</a>
+                    }
+                    @if (homePage.FooterEmailAddress != null)
+                    {
+                        <a href="mailto: @homePage.FooterEmailAddress.Url" class="footer-link link" target="@homePage.FooterEmailAddress.Target">@homePage.FooterEmailAddress.Url</a>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    @if (!string.IsNullOrWhiteSpace(homePage.FooterCopyrightText))
+    {
+        <div class="footer-bottom">
+            <div class="wrap">
+                <span class="footer-bottom__text">@homePage.FooterCopyrightText</span>
+            </div>
+        </div>
+    }
+</footer>

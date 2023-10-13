@@ -1,0 +1,11 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.ShapeDivider;
+}
+<section class="shape-divider">
+    <div class="wrap">
+        <img src="@item.Image?.GetCropUrl()"
+             alt="Shape divider image" />
+    </div>
+</section>

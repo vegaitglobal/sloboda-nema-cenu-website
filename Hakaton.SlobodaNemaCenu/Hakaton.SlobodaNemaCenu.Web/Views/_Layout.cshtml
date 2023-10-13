@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body>
-     @Html.Partial("_Header")
+    @await Html.PartialAsync("~/Views/Partials/Header.cshtml")
 
     @RenderBody()
-    @Html.Partial("_Footer")
+    @await Html.PartialAsync("~/Views/Partials/Footer.cshtml")
 
 
     <script src="~/js/script.js"></script>

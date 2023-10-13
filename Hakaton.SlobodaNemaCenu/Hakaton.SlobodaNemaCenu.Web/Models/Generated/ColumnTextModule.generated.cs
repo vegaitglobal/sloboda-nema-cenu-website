@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 {
-	/// <summary>Activities Page</summary>
-	[PublishedModel("activitiesPage")]
-	public partial class ActivitiesPage : PublishedContentModel, IPageBase
+	/// <summary>Column Text Module</summary>
+	[PublishedModel("columnTextModule")]
+	public partial class ColumnTextModule : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		public new const string ModelTypeAlias = "activitiesPage";
+		public new const string ModelTypeAlias = "columnTextModule";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
@@ -34,14 +34,14 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<ActivitiesPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<ColumnTextModule, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public ActivitiesPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public ColumnTextModule(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,35 +50,19 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		// properties
 
 		///<summary>
-		/// Banner Image
+		/// CTA Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("bannerImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BannerImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "bannerImage");
+		[ImplementPropertyType("ctaLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link CtaLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "ctaLink");
 
 		///<summary>
-		/// Text
+		/// Items
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("text")]
-		public virtual string Text => this.Value<string>(_publishedValueFallback, "text");
-
-		///<summary>
-		/// SEO Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("sEOTitle")]
-		public virtual string SEotitle => global::Hakaton.SlobodaNemaCenu.Web.Models.Generated.PageBase.GetSEotitle(this, _publishedValueFallback);
-
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("title")]
-		public virtual string Title => global::Hakaton.SlobodaNemaCenu.Web.Models.Generated.PageBase.GetTitle(this, _publishedValueFallback);
+		[ImplementPropertyType("items")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Items => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "items");
 	}
 }
