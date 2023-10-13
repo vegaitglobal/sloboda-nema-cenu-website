@@ -1,0 +1,15 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.Rte;
+}
+
+<div class="rte">
+    <h2 style="text-align: center">@item.Title</h2>
+    <p style="text-align: center; font-weight: 600">
+        @item.Description
+    </p>
+    <p style="text-align: center">
+        @item.Details
+    </p>
+</div>

@@ -1,0 +1,25 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.ImageModule;
+}
+
+<section class="image-box">
+    <div class="wrap">
+        <div class="image-box__wrap">
+            <div class="image-box__img">
+                <a href="@item.ClickableLink.Url" class="image-box__link">
+                    <img src="@item.Image.Url()" alt="Image exemple" />
+                </a>
+            </div>
+
+            <div class="image-box__comment">
+                <span class="grey">@item.Title</span>
+                <span>@item.Subtitle</span>
+                <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

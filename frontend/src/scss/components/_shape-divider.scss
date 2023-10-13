@@ -1,0 +1,11 @@
+// ----------  shape-divider
+// ------------------------------------------------------------------------------
+
+@use '../abstracts' as *;
+
+.shape-divider {
+  margin-bottom: 64px;
+  img {
+    display: block;
+  }
+}

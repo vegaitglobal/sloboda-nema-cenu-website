@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.icons {
+  display: flex;
+  margin-bottom: 23px;
+}
+.icon-link {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $light-blue;
+  color: $white;
+  font-size: 20px;
+  position: relative;
+  margin-right: 24px;
+  transition: $anim;
+  .icon {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @include hover {
+    background-color: rgba($light-blue, 0.7);
+  }
+}

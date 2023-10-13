@@ -1,0 +1,119 @@
+// ----------  related-news
+// ------------------------------------------------------------------------------
+
+@use '../abstracts' as *;
+
+.related-news {
+  margin-bottom: 64px;
+  overflow: hidden;
+}
+.related-news__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 47px;
+  .h2 {
+    margin-bottom: 0;
+  }
+}
+.related-news__btn {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+  &.show-on-mobile {
+    margin-top: 24px;
+    display: inline-block;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+.related-news__cards {
+  .swiper-wrapper {
+    @include media-breakpoint-up(md) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+.related-news__card {
+  border-radius: 40px 40px 10px 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  @include media-breakpoint-up(md) {
+    max-width: 366px;
+    flex: 1 1 366px;
+    margin-bottom: 20px;
+    &:not(:nth-of-type(3n)) {
+      margin-right: 20px;
+    }
+  }
+  @include hover {
+    background: rgba(255, 255, 255, 0.1);
+    .related-news__card-title {
+      border-color: $light-blue;
+      color: $light-blue;
+    }
+    .icon {
+      color: $light-blue;
+    }
+  }
+}
+.related-news__tags {
+  position: relative;
+  z-index: 2;
+}
+.rated-news__card-top {
+  width: 100%;
+  height: 225px;
+  position: relative;
+  border-radius: 40px 40px 0;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.related-news__tags {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+.related-news__tag {
+  display: inline-block;
+  background-color: $light-blue;
+  font-weight: 500;
+  line-height: normal;
+  padding: 8px 10px 7px 10px;
+  border-radius: 16px;
+  &:nth-of-type(2n) {
+    margin-left: 10px;
+  }
+}
+.related-news__card-content {
+  padding: 16px;
+  .h4 {
+    margin-bottom: 14px;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: $anim;
+  }
+}
+.related-news__link {
+  margin-top: 14px;
+  a {
+    display: flex;
+    color: $light-blue;
+    font-weight: 600;
+    line-height: 18.2px;
+    .icon {
+      margin-left: auto;
+      color: rgba($white, 0.2);
+      transition: $anim;
+    }
+  }
+}

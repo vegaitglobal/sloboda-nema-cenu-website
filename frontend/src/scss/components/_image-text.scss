@@ -1,0 +1,44 @@
+// ----------  image-box
+// ------------------------------------------------------------------------------
+
+@use '../abstracts' as *;
+
+.image-text {
+  margin: 115px 0 64px;
+}
+.image-text__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.image-text__content {
+  max-width: 560px;
+  margin-right: 48px;
+}
+.image-text__paragraph {
+  &.bold {
+    font-weight: 600;
+  }
+  &:nth-of-type(2) {
+    margin-top: 14px;
+  }
+}
+.image-text__image {
+  position: relative;
+}
+
+.image-text__image-main {
+  border: 2px solid $dark-blue-2;
+  border-radius: 100px 100px 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-width: 463px;
+}
+
+.image-text__image-shape {
+  position: absolute;
+  top: -49px;
+  left: -66px;
+  max-width: 147px;
+}

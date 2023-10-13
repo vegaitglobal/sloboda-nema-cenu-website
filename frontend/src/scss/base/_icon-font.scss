@@ -1,0 +1,34 @@
+@font-face {
+	font-family: "svgicons";
+	font-display: block;
+	src: url("../assets/fonts/svgicons.woff2?164d27d0c41adc3636551b42a8ff351a") format("woff2"),
+url("../assets/fonts/svgicons.woff?164d27d0c41adc3636551b42a8ff351a") format("woff"),
+url("../assets/fonts/svgicons.svg?164d27d0c41adc3636551b42a8ff351a#svgicons") format("svg");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: svgicons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-arrow:before {
+	content: "\f101";
+}
+.icon-facebook:before {
+	content: "\f102";
+}
+.icon-instagram:before {
+	content: "\f103";
+}
+.icon-linkedin:before {
+	content: "\f104";
+}
+.icon-twitter:before {
+	content: "\f105";
+}

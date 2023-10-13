@@ -1,0 +1,208 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+<main class="main">
+
+    @Html.GetBlockListHtml(Model.PageContent)
+
+
+    <section class="image-box">
+        <div class="wrap">
+            <div class="image-box__wrap">
+                <div class="image-box__img">
+                    <a href="/" class="image-box__link">
+                        <img src="./assets/images/demo.jpg" alt="Image exemple" />
+                    </a>
+                </div>
+
+                <div class="image-box__comment">
+                    <span class="grey">Sloboda Nema Cenu,</span>
+                    <span>KC Liman</span>
+                    <div class="triangle-comment">
+                        <span class="sr-only">Triangle shape</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-text">
+        <div class="wrap">
+            <div class="image-text__wrap">
+                <div class="image-text__content">
+                    <h2 class="h2 image-text__title">Trgovina ljudima</h2>
+                    <p class="image-text__paragraph bold text-small">
+                        Rad smo započeli kao neformalna grupa građanja, ali smo se od
+                        početka trudili da rame uz rame na prevenciji trgovine ljudima
+                        radimo zajedno sa predstavnciima državnih institucija, drugim
+                        organizacijama i loklanim timovima.
+                    </p>
+                    <p class="image-text__paragraph text-small">
+                        Rad smo započeli kao neformalna grupa građanja, ali smo se od
+                        početka trudili da rame uz rame na prevenciji trgovine ljudima
+                        radimo zajedno sa predstavnciima državnih institucija, drugim
+                        organizacijama i loklanim timovima.
+                    </p>
+                </div>
+                <div class="image-text__image">
+                    <img src="./assets/images/star-shape.svg"
+                         alt="Svg shape"
+                         class="image-text__image-shape" />
+                    <img src="./assets/images/image-text.png"
+                         alt="Image alt text"
+                         class="image-text__image-main" />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="shape-divider">
+        <div class="wrap">
+            <img src="./assets/images/shape-divider.png"
+                 alt="Shape divider image" />
+        </div>
+    </section>
+    <section class="related-news">
+        <div class="wrap">
+            <div class="related-news__top">
+                <h2 class="h2">Activities</h2>
+                <a href="javascript:;" class="btn related-news__btn">See all activities</a>
+            </div>
+            <div class="related-news__cards swiper-container js-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide related-news__card">
+                        <div class="rated-news__card-top">
+                            <img src="./assets/images/demo.jpg" alt="Card img" />
+                            <div class="related-news__tags">
+                                <span class="related-news__tag date">13/09/2023</span>
+                                <span class="related-news__tag place">KC Liman</span>
+                            </div>
+                        </div>
+                        <div class="related-news__card-content">
+                            <h4 class="h4 related-news__card-title">
+                                Mladi o trgovini ljudima
+                            </h4>
+                            <p class="text-small">
+                                Mapa je u formi edukativnog i informativnog materijala koja
+                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
+                                se bave borbom protiv trgovine ljudima.
+                            </p>
+                            <div class="related-news__link">
+                                <a href="/" target="_blank">
+                                    Read more
+                                    <span class="icon icon-arrow">
+                                        <span class="sr-only">read more icon</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide related-news__card">
+                        <div class="rated-news__card-top">
+                            <img src="./assets/images/demo.jpg" alt="Card img" />
+                            <div class="related-news__tags">
+                                <span class="related-news__tag date">13/09/2023</span>
+                                <span class="related-news__tag place">KC Liman</span>
+                            </div>
+                        </div>
+                        <div class="related-news__card-content">
+                            <h4 class="h4 related-news__card-title">
+                                Mladi o trgovini ljudima
+                            </h4>
+                            <p class="text-small">
+                                Mapa je u formi edukativnog i informativnog materijala koja
+                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
+                                se bave borbom protiv trgovine ljudima.
+                            </p>
+                            <div class="related-news__link">
+                                <a href="/" target="_blank">
+                                    Read more
+                                    <span class="icon icon-arrow">
+                                        <span class="sr-only">read more icon</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide related-news__card">
+                        <div class="rated-news__card-top">
+                            <img src="./assets/images/demo.jpg" alt="Card img" />
+                            <div class="related-news__tags">
+                                <span class="related-news__tag date">13/09/2023</span>
+                                <span class="related-news__tag place">KC Liman</span>
+                            </div>
+                        </div>
+                        <div class="related-news__card-content">
+                            <h4 class="h4 related-news__card-title">
+                                Mladi o trgovini ljudima
+                            </h4>
+                            <p class="text-small">
+                                Mapa je u formi edukativnog i informativnog materijala koja
+                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
+                                se bave borbom protiv trgovine ljudima.
+                            </p>
+                            <div class="related-news__link">
+                                <a href="/" target="_blank">
+                                    Read more
+                                    <span class="icon icon-arrow">
+                                        <span class="sr-only">read more icon</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="btn related-news__btn show-on-mobile">See all activities</a>
+        </div>
+    </section>
+    
+    <section class="image-box no-border">
+        <div class="wrap">
+            <div class="image-box__wrap">
+                <div class="image-box__img">
+                    <a href="/" class="image-box__link">
+                        <img src="./assets/images/mapa.png" alt="Image exemple" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-text">
+        <div class="wrap">
+            <div class="image-text__wrap">
+                <div class="image-text__content">
+                    <h2 class="h2 image-text__title">About us</h2>
+                    <p class="image-text__paragraph bold text-small">
+                        Rad smo započeli kao neformalna grupa građanja, ali smo se od
+                        početka trudili da rame uz rame na prevenciji trgovine ljudima
+                        radimo zajedno sa predstavnciima državnih institucija, drugim
+                        organizacijama i loklanim timovima.
+                    </p>
+                    <p class="image-text__paragraph text-small">
+                        Nakon 7 godina kroz koje smo kao neformalna grupa sakupljali
+                        iskustvo i unapređivali znanje procenili smo da smo spremi za
+                        korak dalje i za veće učšće u borbi protiv trgovine ljudima.
+                        Simbolično, na Evropski dan borbe protiv trgovine ljudima 2020.
+                        godine održana osnivačka skupština na kojoj je Neformalna grupa
+                        „Sloboda nema cenu“ postala Udruženje građana. “ Sloboda nema
+                        cenu“ koje broji 7 članica.
+                    </p>
+                </div>
+                <div class="image-text__image">
+                    <img src="./assets/images/shape-2.svg"
+                         alt="Svg shape"
+                         class="image-text__image-shape" />
+                    <img src="./assets/images/image-text.png"
+                         alt="Image alt text"
+                         class="image-text__image-main" />
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

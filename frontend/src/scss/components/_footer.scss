@@ -1,0 +1,43 @@
+// ----------  footer
+// ------------------------------------------------------------------------------
+
+@use '../abstracts' as *;
+
+.footer {
+  background-color: $dark-blue;
+  color: $white;
+  border-top: 6px solid $light-blue;
+  .logo__img {
+    max-width: 80px;
+  }
+}
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 43px 0;
+}
+.footer-nav {
+  .nav__item {
+    margin-left: 0;
+    margin-right: 24px;
+  }
+}
+.footer-links {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  .btn {
+    margin-bottom: 20px;
+  }
+}
+.footer-bottom {
+  padding: 14px 0 20px;
+  text-align: center;
+  background-color: $light-blue;
+  &__text {
+    font-size: 14px;
+    color: $white;
+    font-weight: 400;
+  }
+}

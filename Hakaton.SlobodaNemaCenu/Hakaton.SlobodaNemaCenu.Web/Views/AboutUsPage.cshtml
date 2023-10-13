@@ -1,0 +1,114 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutUsPage>
+@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@{
+    Layout = "_Layout.cshtml";
+}
+<main class="main">
+    
+    @Html.GetBlockListHtml(Model.PageContent)
+
+    <!-- inline styles in rte will be added through the Rich text editor, here we add it to check how it looks, don't add that in BE -->
+    <section class="image-text-box">
+        <div class="wrap">
+            <div class="image-text-box__wrap">
+                <div class="image-text-box__image">
+                    <img src="./assets/images/demo.jpg" alt="Image exemple" />
+                </div>
+                <div class="image-text-box__content">
+                    <h4 class="h4">About us</h4>
+                    <p class="text-small">
+                        Dečiji brakovi uskraćuju devojčicama slobodu izbora,
+                        obrazovanje, budućnost i snove. Da bismo im pružili istinsku
+                        podršku i zaštitu i okončali dečije brakove, potrebno je da se
+                        svi uključimo. Zato je u je osnovana Nacionalna koalicija za
+                        okončanje dečjih brakova.Nacionalna koalicija za okončanje
+                        dečjih brakova predstavlja zajednicu pojedinaca, institucija i
+                        organizacija koji zajedno rade na jačanju opcija bezbednog
+                        izbora za devojčice, naročito devojčica romske nacionalnosti, da
+                        donose vlastitite bezbedne izbore o životu i budućnosti, kao i
+                        na osnaživanju žena i muškaraca, roditelja, kao i budućih
+                        roditelja, da menjaju postojeću praksu dečijih brakova. Još
+                        jednom glasno kažemo "Detinjstvo, ne brak!".
+                    </p>
+                    <div class="image-box__comment">
+                        <span>Sloboda Nema Cenu</span>
+                        <div class="triangle-comment">
+                            <span class="sr-only">Triangle shape</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-text-box reverse">
+        <div class="wrap">
+            <div class="image-text-box__wrap">
+                <div class="image-text-box__image">
+                    <img src="./assets/images/demo.jpg" alt="Image exemple" />
+                </div>
+                <div class="image-text-box__content">
+                    <h4 class="h4">About us</h4>
+                    <p class="text-small">
+                        Dečiji brakovi uskraćuju devojčicama slobodu izbora,
+                        obrazovanje, budućnost i snove. Da bismo im pružili istinsku
+                        podršku i zaštitu i okončali dečije brakove, potrebno je da se
+                        svi uključimo. Zato je u je osnovana Nacionalna koalicija za
+                        okončanje dečjih brakova.Nacionalna koalicija za okončanje
+                        dečjih brakova predstavlja zajednicu pojedinaca, institucija i
+                        organizacija koji zajedno rade na jačanju opcija bezbednog
+                        izbora za devojčice, naročito devojčica romske nacionalnosti, da
+                        donose vlastitite bezbedne izbore o životu i budućnosti, kao i
+                        na osnaživanju žena i muškaraca, roditelja, kao i budućih
+                        roditelja, da menjaju postojeću praksu dečijih brakova. Još
+                        jednom glasno kažemo "Detinjstvo, ne brak!".
+                    </p>
+                    <div class="image-box__comment">
+                        <span>Sloboda Nema Cenu</span>
+                        <div class="triangle-comment">
+                            <span class="sr-only">Triangle shape</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-grid">
+        <div class="wrap">
+            <div class="image-grid-wrap">
+                <div class="background-text">
+                    <span class="background-text__content"><span>Nasi projekti</span></span>
+                </div>
+                <div class="image-grid__content">
+                    <div class="image-grid__images">
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                    </div>
+                    <a href="/" class="btn">See all activities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

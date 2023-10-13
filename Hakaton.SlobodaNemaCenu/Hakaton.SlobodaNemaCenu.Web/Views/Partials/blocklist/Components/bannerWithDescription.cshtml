@@ -1,0 +1,26 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.BannerWithDescription;
+}
+<section class="banner">
+    <div class="wrap">
+        <div class="banner-wrap">
+            <div class="banner-text">
+                <p class="banner-subtitle">@item.Title</p>
+                <h1 class="h1 banner-title">@item.Subtitle</h1>
+                <p class="text">
+                    @item.Text
+                </p>
+                <div class="banner-buttons">
+            
+                  @Html.GetBlockListHtml( item.Buttons)
+                   
+                </div>
+            </div>
+            <div class="banner-img">
+                <img src="./assets/images/bird.png" alt="banner image" />
+            </div>
+        </div>
+    </div>
+</section>
