@@ -1,0 +1,49 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.RelatedContent;
+    var items = item.ManuallySelectedArticles?.Any() ?? false ?
+    item.ManuallySelectedArticles.Cast<ContentModels.ActivityPage>() :
+    item.AutomaticallySelectedArticles.First().Children<ContentModels.ActivityPage>().OrderBy(a => a.Date).Take(2);
+    
+}
+
+<section class="related-news">
+    <div class="wrap">
+        <div class="related-news__cards swiper-container js-swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach(var content in items)
+                {
+                <div class="swiper-slide related-news__card">
+                    <div class="rated-news__card-top">
+                        <img src="@content.PreviewImage.GetCropUrl()" alt="Card img" />
+                        <div class="related-news__tags">
+                            <span class="related-news__tag date">@content.Date.ToString("dd/mm/yyyy")</span>
+                            <span class="related-news__tag place">@content.Category</span>
+                        </div>
+                    </div>
+                    <div class="related-news__card-content">
+                        <h4 class="h4 related-news__card-title">
+                            @content.PreviewTitle
+                        </h4>
+                        <p class="text-small">
+                            @content.PreviewText
+                        </p>
+                        <div class="related-news__link">
+                            <a href="@content.Url()" target="_blank">
+                                Read more
+                                <span class="icon icon-arrow">
+                                    <span class="sr-only">read more icon</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        <a href="javascript:;" class="btn related-news__btn show-on-mobile">See all activities</a>
+    </div>
+</section>
