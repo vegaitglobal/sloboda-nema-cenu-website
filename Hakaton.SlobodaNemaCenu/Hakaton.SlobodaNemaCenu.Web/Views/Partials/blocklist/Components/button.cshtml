@@ -1,0 +1,8 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.Button;
+    var buttonClass = item.Style ? "blue-btn" : string.Empty;
+}
+
+<a href="@item.Link?.Url" target="@item.Link?.Target" class="btn @buttonClass">@item.Link?.Name</a>
