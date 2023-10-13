@@ -1,6 +1,23 @@
 version: "3.9"
 
 services:
+  umbraco:
+    container_name: "slobodanemacenu_umbraco"
+    build:
+      context: ./Hakaton.SlobodaNemaCenu
+      dockerfile: Dockerfile
+    ports:
+      - "${UMBRACO_PORT}:5113"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__umbracoDbDSN=${CONNECTION_STRING}
+    volumes:
+      - ./data/media/:/app/Media
+      - ./data/uploads/:/app/uploads
+      - ./data/wwwroot/uploads/:/app/wwwroot/uploads
+    restart: always
+    env_file:
+      - .env
   database:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: "slobodanemacenu_database"

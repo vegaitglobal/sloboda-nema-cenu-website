@@ -10,6 +10,15 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@main
+      - name: Building docker image
+        run: docker build ./Hakaton.SlobodaNemaCenu/ -t codeforacause/${{ secrets.UMBRACO_IMAGE_NAME }}:${{ github.run_number }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Pushing Docker image to Docker hub
+        run: docker push codeforacause/${{ secrets.UMBRACO_IMAGE_NAME }}:${{ github.run_number }}
       - name: Replace tokens
         uses: cschleiden/replace-tokens@v1.1
         with:
@@ -17,8 +26,13 @@ jobs:
           tokenSuffix: '}#'
           files: '["docker-compose.production.yaml"]'
         env:
+          TAG_NUMBER: "${{ github.run_number }}"
           DATABASE_PORT: "${{ secrets.DATABASE_PORT }}"
           DATABASE_PASSWORD: "${{ secrets.DATABASE_PASSWORD }}"
+          UMBRACO_IMAGE_NAME: "${{ secrets.UMBRACO_IMAGE_NAME }}"
+          UMBRACO_PORT: "${{ secrets.UMBRACO_PORT }}"
+          ASPNETCORE_ENVIRONMENT: "${{ secrets.ASPNETCORE_ENVIRONMENT }}"
+          CONNECTION_STRING: "${{ secrets.CONNECTION_STRING }}"
       - name: Copy docker compose file via SSH password
         uses: appleboy/scp-action@master
         with:

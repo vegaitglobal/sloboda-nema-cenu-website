@@ -1,6 +1,19 @@
 version: "3.9"
 
 services:
+  umbraco:
+    image: codeforacause/#{UMBRACO_IMAGE_NAME}#:#{TAG_NUMBER}#
+    container_name: "slobodanemacenu_umbraco"
+    ports:
+      - "#{UMBRACO_PORT}#:5113"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=#{ASPNETCORE_ENVIRONMENT}#
+      - ConnectionStrings__umbracoDbDSN=#{CONNECTION_STRING}#
+    volumes:
+      - ./data/media/:/app/Media
+      - ./data/uploads/:/app/uploads
+      - ./data/wwwroot/uploads/:/app/wwwroot/uploads
+    restart: always
   database:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: "slobodanemacenu_database"
