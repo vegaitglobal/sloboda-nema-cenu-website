@@ -7,9 +7,9 @@
         <div class="wrap">
             <div class="title-cards__wrap">
                 <div class="title-cards__boxes">
-                    @Html.GetBlockListHtml( item.Buttons)                   
+                    @Html.GetBlockListHtml( item.Items)                   
                 </div>
-                <a href="@item.CtaLink.Url" class="btn">@item.CtaLink.Text</a>
+                <a href="@item.CtaLink.Url" class="btn">@item.CtaLink.Name</a>
             </div>
         </div>
     </section>
