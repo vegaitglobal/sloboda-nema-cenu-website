@@ -2,7 +2,8 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ActivitiesPage>
 @using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
 @{
-	Layout = "_Layout.cshtml";
+    Layout = "_Layout.cshtml";
+    var children = Model.Children<ContentModels.ActivityPage>().OrderBy(d => d.Date);
 }
 
 
@@ -17,7 +18,7 @@
                     </p>
                 </div>
                 <div class="banner-img">
-                    <img src="./assets/images/bird.png" alt="banner image" />
+                    <img src="@Model.BannerImage?.GetCropUrl()" alt="banner image" />
                 </div>
             </div>
         </div>
@@ -29,249 +30,33 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
+                    @foreach (var item in children){
+                        <div class="swiper-slide related-news__card">
+                            <div class="rated-news__card-top">
+                                <img src="@item.PreviewImage?.GetCropUrl()" alt="Card img" />
+                                <div class="related-news__tags">
+                                    <span class="related-news__tag date">@item.Date.ToString("dd/MM/yyyy") </span>
+                                    <span class="related-news__tag place">@item.Category</span>
+                                </div>
+                            </div>
+                            <div class="related-news__card-content">
+                                <h4 class="h4 related-news__card-title">
+                                   @item.PreviewTitle
+                                </h4>
+                                <p class="text-small">
+                                    @item.PreviewText
+                                </p>
+                                <div class="related-news__link">
+                                    <a href="@item.Url()" target="_blank">
+                                        Read more
+                                        <span class="icon icon-arrow">
+                                            <span class="sr-only">read more icon</span>
+                                        </span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="blog.html" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="blog.html" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="blog.html" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="/" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="/" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="/" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="/" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="/" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide related-news__card">
-                        <div class="rated-news__card-top">
-                            <img src="./assets/images/demo.jpg" alt="Card img" />
-                            <div class="related-news__tags">
-                                <span class="related-news__tag date">13/09/2023</span>
-                                <span class="related-news__tag place">KC Liman</span>
-                            </div>
-                        </div>
-                        <div class="related-news__card-content">
-                            <h4 class="h4 related-news__card-title">
-                                Mladi o trgovini ljudima
-                            </h4>
-                            <p class="text-small">
-                                Mapa je u formi edukativnog i informativnog materijala koja
-                                u sebi sadrži kontakte svih važnih institucija i OCD, a koji
-                                se bave borbom protiv trgovine ljudima.
-                            </p>
-                            <div class="related-news__link">
-                                <a href="/" target="_blank">
-                                    Read more
-                                    <span class="icon icon-arrow">
-                                        <span class="sr-only">read more icon</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
             <a href="javascript:;" class="btn related-news__btn show-on-mobile">See all activities</a>
