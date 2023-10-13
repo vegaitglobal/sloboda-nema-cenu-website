@@ -4,6 +4,7 @@ const dropdown = {
   },
 
   filterDropdown: function () {
+    if (!document.querySelector('.checkbox-dropdown-btn')) {return; }
     document
       .querySelector('.checkbox-dropdown-btn')
       .addEventListener('click', function (event) {
