@@ -13,7 +13,5 @@ services:
     volumes:
       - slobodanemacenu_database_data:/var/opt/mssql/data
     restart: always
-    env_file:
-      - .env
 volumes:
   slobodanemacenu_database_data:
