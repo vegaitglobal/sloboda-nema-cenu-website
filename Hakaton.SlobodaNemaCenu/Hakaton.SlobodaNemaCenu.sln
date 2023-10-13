@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hakaton.SlobodaNemaCenu.Web", "Hakaton.SlobodaNemaCenu.Web\Hakaton.SlobodaNemaCenu.Web.csproj", "{0D26B82C-BBF0-4ECD-BEA1-36144696872A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hakaton.SlobodaNemaCenu.Web", "Hakaton.SlobodaNemaCenu.Web\Hakaton.SlobodaNemaCenu.Web.csproj", "{0D26B82C-BBF0-4ECD-BEA1-36144696872A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

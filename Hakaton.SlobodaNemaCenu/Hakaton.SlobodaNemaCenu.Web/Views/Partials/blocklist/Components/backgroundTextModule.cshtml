@@ -1,0 +1,11 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.BackgroundTextModule;
+}
+
+<section class="background-text js-scroll">
+        <div>
+            <span class="background-text__content js-outer-scroll-text"><span class="js-scroll-text">@item.Text</span></span>
+        </div>
+</section>
