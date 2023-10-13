@@ -1,0 +1,12 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ActivityPage>
+@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+
+<main class="main blog">
+    @Html.GetBlockListHtml(Model.PageContent)
+
+</main>
