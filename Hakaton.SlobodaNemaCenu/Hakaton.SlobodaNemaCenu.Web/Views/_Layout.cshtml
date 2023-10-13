@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body>
-     @*@Html.Partial("_Header")*@
+    @await Html.PartialAsync("~/Views/Partials/Header.cshtml")
 
     @RenderBody()
     @await Html.PartialAsync("~/Views/Partials/Footer.cshtml")

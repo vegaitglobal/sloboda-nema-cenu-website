@@ -1,0 +1,50 @@
+﻿@using Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits UmbracoViewPage
+
+@{
+    var homePage = Model.AncestorOrSelf<Home>();
+}
+
+<header class="header">
+    <div class="wrap">
+        <div class="header__container">
+            @if(homePage.NavigationLogo != null)
+            {
+                <a href="/" class="logo">
+                    <img class="logo__img" src="@homePage.NavigationLogo.Url()" alt="@homePage.NavigationLogo.Name">
+                </a>
+            }
+            @if (homePage.NavigationPages != null && homePage.NavigationPages.Any())
+            {
+                <nav class="nav">
+                    <ul class="nav__list" role="menubar">
+                        @foreach (var pageItem in homePage.NavigationPages)
+                        {
+                            <li class="nav__item active" role="menuitem">
+                                <a class="nav__link" href="@pageItem.Url" rel="noopener noreferrer">@pageItem.Name</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            }
+            <div class="header-action">
+                <div class="language-dropdown">
+                    @if(homePage.Cultures != null && homePage.Cultures.Any())
+                    {
+                        @foreach (var lang in homePage.Cultures)
+                        {
+                            <p>@lang.Key</p>
+                        }
+                    }
+                </div>
+                <button type="button" class="mobile-menu">
+                    <div><span class="sr-only">Mobile menu button</span></div>
+                </button>
+                @if(homePage.NavigationButtonLink != null)
+                {
+                    <a href="@homePage.NavigationButtonLink.Url" class="btn header-btn">@homePage.NavigationButtonLink.Name</a>
+                }
+            </div>
+        </div>
+    </div>
+</header>
