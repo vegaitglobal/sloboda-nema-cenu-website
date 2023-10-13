@@ -2,5 +2,64 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ActivitiesPage>
 @using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
 @{
-	Layout = "_Layout.cshtml";
+    Layout = "_Layout.cshtml";
+    var children = Model.Children<ContentModels.ActivityPage>().OrderBy(d => d.Date);
 }
+
+
+<main class="main">
+    <section class="banner small">
+        <div class="wrap">
+            <div class="banner-wrap">
+                <div class="banner-text">
+                    <h1 class="h1 banner-title">@Model.Title</h1>
+                    <p class="text">
+                        @Model.Text
+                    </p>
+                </div>
+                <div class="banner-img">
+                    <img src="@Model.BannerImage?.GetCropUrl()" alt="banner image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-news">
+        <div class="wrap">
+            <div class="related-news__cards swiper-container js-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    @foreach (var item in children){
+                        <div class="swiper-slide related-news__card">
+                            <div class="rated-news__card-top">
+                                <img src="@item.PreviewImage?.GetCropUrl()" alt="Card img" />
+                                <div class="related-news__tags">
+                                    <span class="related-news__tag date">@item.Date.ToString("dd/MM/yyyy") </span>
+                                    <span class="related-news__tag place">@item.Category</span>
+                                </div>
+                            </div>
+                            <div class="related-news__card-content">
+                                <h4 class="h4 related-news__card-title">
+                                   @item.PreviewTitle
+                                </h4>
+                                <p class="text-small">
+                                    @item.PreviewText
+                                </p>
+                                <div class="related-news__link">
+                                    <a href="@item.Url()" target="_blank">
+                                        Read more
+                                        <span class="icon icon-arrow">
+                                            <span class="sr-only">read more icon</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <a href="javascript:;" class="btn related-news__btn show-on-mobile">See all activities</a>
+        </div>
+    </section>
+</main>
