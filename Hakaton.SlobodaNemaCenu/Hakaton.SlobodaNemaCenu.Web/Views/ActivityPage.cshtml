@@ -7,6 +7,13 @@
 
 
 <main class="main blog">
+      <section class="blog-tags">
+        <div class="wrap">
+          <div class="related-news__tags">
+            <span class="related-news__tag date">@Model.Date.ToString("dd/MM/yyyy")</span>
+            <span class="related-news__tag place">@Model.Category</span>
+          </div>
+        </div>
+      </section>
     @Html.GetBlockListHtml(Model.PageContent)
-
 </main>
