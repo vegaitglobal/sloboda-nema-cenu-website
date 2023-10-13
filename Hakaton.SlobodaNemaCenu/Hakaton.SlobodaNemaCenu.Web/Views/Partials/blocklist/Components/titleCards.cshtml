@@ -1,0 +1,20 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.TitleCards;
+}
+<section class="title-cards">
+    <div class="wrap">
+        <div class="title-cards__wrap">
+            <div class="title-cards__boxes">
+
+
+                @Html.GetBlockListHtml(item.Cards)
+            </div>
+            @if(item.Button is not null)
+            {
+               <a href="@item.Button.Url" class="btn">@item.Button.Name</a>             
+            }
+        </div>
+    </div>
+</section>
