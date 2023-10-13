@@ -55,7 +55,7 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("socialLink")]
-		public virtual string SocialLink => this.Value<string>(_publishedValueFallback, "socialLink");
+		public virtual global::Umbraco.Cms.Core.Models.Link SocialLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "socialLink");
 
 		///<summary>
 		/// Social Link Type
