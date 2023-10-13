@@ -1,0 +1,207 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutUsPage>
+@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<main class="main">
+    <section class="banner small">
+        <div class="wrap">
+            <div class="banner-wrap">
+                <div class="banner-text">
+                    <h1 class="h1 banner-title">@Model.Title</h1>
+                    <p class="text">
+                        @Model.Text
+                    </p>
+                </div>
+                <div class="banner-img">
+                    <img src="@Model.BannerImage?.GetCropUrl()" alt="banner image" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-box">
+        <div class="wrap">
+            <div class="image-box__wrap">
+                <div class="image-box__img">
+                    <a href="/" class="image-box__link">
+                        <img src="@Model.ImageExample?.GetCropUrl()" alt="Image exemple" />
+                    </a>
+                </div>
+
+                <div class="image-box__comment">
+                    <span class="grey">Sloboda Nema Cenu,</span>
+                    <span>KC Liman</span>
+                    <div class="triangle-comment">
+                        <span class="sr-only">Triangle shape</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- inline styles in rte will be added through the Rich text editor, here we add it to check how it looks, don't add that in BE -->
+    <div class="rte">
+        <h2 style="text-align: center">About us</h2>
+        <p style="text-align: center; font-weight: 600">
+            Rad smo započeli kao neformalna grupa građanja, ali smo se od početka
+            trudili da rame uz rame na prevenciji trgovine ljudima radimo zajedno
+            sa predstavnciima državnih institucija, drugim organizacijama i
+            loklanim timovima.
+        </p>
+        <p style="text-align: center">
+            Nakon 7 godina kroz koje smo kao neformalna grupa sakupljali iskustvo
+            i unapređivali znanje procenili smo da smo spremi za korak dalje i za
+            veće učšće u borbi protiv trgovine ljudima. Simbolično, na Evropski
+            dan borbe protiv trgovine ljudima 2020. godine održana osnivačka
+            skupština na kojoj je Neformalna grupa „Sloboda nema cenu“ postala
+            Udruženje građana. “ Sloboda nema cenu“ koje broji 7 članica.
+        </p>
+    </div>
+    <section class="shape-divider">
+        <div class="wrap">
+            <img src="./assets/images/shape-divider.png"
+                 alt="Shape divider image" />
+        </div>
+    </section>
+    <section class="title-cards">
+        <div class="wrap">
+            <div class="title-cards__wrap">
+                <div class="title-cards__boxes">
+                    <div class="title-card">
+                        <h3 class="h3 title-card__title">Naslov 1</h3>
+                        <div class="title-card__text">
+                            <p class="text-small">
+                                Nakon 7 godina kroz koje smo kao neformalna grupa sakupljali
+                                iskustvo i unapređivali znanje procenili smo da smo spremi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="title-card">
+                        <h3 class="h3 title-card__title">Naslov 2</h3>
+                        <div class="title-card__text">
+                            <p class="text-small">
+                                Nakon 7 godina kroz koje smo kao neformalna grupa sakupljali
+                                iskustvo i unapređivali znanje procenili smo da smo spremi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="title-card">
+                        <h3 class="h3 title-card__title">Naslov 3</h3>
+                        <div class="title-card__text">
+                            <p class="text-small">
+                                Nakon 7 godina kroz koje smo kao neformalna grupa sakupljali
+                                iskustvo i unapređivali znanje procenili smo da smo spremi.
+                                Nakon 7 godina kroz koje smo kao neformalna grupa sakupljali
+                                iskustvo i unapređivali znanje procenili smo da smo spremi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="btn">Find out more</a>
+            </div>
+        </div>
+    </section>
+    <section class="image-text-box">
+        <div class="wrap">
+            <div class="image-text-box__wrap">
+                <div class="image-text-box__image">
+                    <img src="./assets/images/demo.jpg" alt="Image exemple" />
+                </div>
+                <div class="image-text-box__content">
+                    <h4 class="h4">About us</h4>
+                    <p class="text-small">
+                        Dečiji brakovi uskraćuju devojčicama slobodu izbora,
+                        obrazovanje, budućnost i snove. Da bismo im pružili istinsku
+                        podršku i zaštitu i okončali dečije brakove, potrebno je da se
+                        svi uključimo. Zato je u je osnovana Nacionalna koalicija za
+                        okončanje dečjih brakova.Nacionalna koalicija za okončanje
+                        dečjih brakova predstavlja zajednicu pojedinaca, institucija i
+                        organizacija koji zajedno rade na jačanju opcija bezbednog
+                        izbora za devojčice, naročito devojčica romske nacionalnosti, da
+                        donose vlastitite bezbedne izbore o životu i budućnosti, kao i
+                        na osnaživanju žena i muškaraca, roditelja, kao i budućih
+                        roditelja, da menjaju postojeću praksu dečijih brakova. Još
+                        jednom glasno kažemo "Detinjstvo, ne brak!".
+                    </p>
+                    <div class="image-box__comment">
+                        <span>Sloboda Nema Cenu</span>
+                        <div class="triangle-comment">
+                            <span class="sr-only">Triangle shape</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-text-box reverse">
+        <div class="wrap">
+            <div class="image-text-box__wrap">
+                <div class="image-text-box__image">
+                    <img src="./assets/images/demo.jpg" alt="Image exemple" />
+                </div>
+                <div class="image-text-box__content">
+                    <h4 class="h4">About us</h4>
+                    <p class="text-small">
+                        Dečiji brakovi uskraćuju devojčicama slobodu izbora,
+                        obrazovanje, budućnost i snove. Da bismo im pružili istinsku
+                        podršku i zaštitu i okončali dečije brakove, potrebno je da se
+                        svi uključimo. Zato je u je osnovana Nacionalna koalicija za
+                        okončanje dečjih brakova.Nacionalna koalicija za okončanje
+                        dečjih brakova predstavlja zajednicu pojedinaca, institucija i
+                        organizacija koji zajedno rade na jačanju opcija bezbednog
+                        izbora za devojčice, naročito devojčica romske nacionalnosti, da
+                        donose vlastitite bezbedne izbore o životu i budućnosti, kao i
+                        na osnaživanju žena i muškaraca, roditelja, kao i budućih
+                        roditelja, da menjaju postojeću praksu dečijih brakova. Još
+                        jednom glasno kažemo "Detinjstvo, ne brak!".
+                    </p>
+                    <div class="image-box__comment">
+                        <span>Sloboda Nema Cenu</span>
+                        <div class="triangle-comment">
+                            <span class="sr-only">Triangle shape</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-grid">
+        <div class="wrap">
+            <div class="image-grid-wrap">
+                <div class="background-text">
+                    <span class="background-text__content"><span>Nasi projekti</span></span>
+                </div>
+                <div class="image-grid__content">
+                    <div class="image-grid__images">
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                        <a href="/" class="image-grid__link">
+                            <img src="./assets/images/image-text.png" alt="" />
+                        </a>
+                    </div>
+                    <a href="/" class="btn">See all activities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -50,12 +50,51 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		// properties
 
 		///<summary>
+		/// Category
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("category")]
+		public virtual string Category => this.Value<string>(_publishedValueFallback, "category");
+
+		///<summary>
+		/// Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("date")]
+		public virtual global::System.DateTime Date => this.Value<global::System.DateTime>(_publishedValueFallback, "date");
+
+		///<summary>
 		/// Page Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageContent")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel PageContent => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "pageContent");
+
+		///<summary>
+		/// Preview Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("previewImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops PreviewImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "previewImage");
+
+		///<summary>
+		/// Preview Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("previewText")]
+		public virtual string PreviewText => this.Value<string>(_publishedValueFallback, "previewText");
+
+		///<summary>
+		/// Preview Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("previewTitle")]
+		public virtual string PreviewTitle => this.Value<string>(_publishedValueFallback, "previewTitle");
 
 		///<summary>
 		/// SEO Title
