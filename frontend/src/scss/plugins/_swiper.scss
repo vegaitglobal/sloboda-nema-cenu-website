@@ -1,0 +1,11 @@
+// ---------- swiper
+// ------------------------------------------------------------------------------
+
+@import '../../../node_modules/swiper/swiper.scss';
+@import '../../../node_modules/swiper/modules/pagination.scss';
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: relative;
+  z-index: 11;
+}

@@ -1,0 +1,28 @@
+// ----------  variables
+// ------------------------------------------------------------------------------
+
+$font-default: 'Montserrat', sans-serif;
+
+// Colors
+$white: #fff;
+$black: #000;
+$grey: #5b6770;
+$dark-blue: #121d2f;
+$dark-blue-2: #196293;
+$dark-blue-3: #084a7c;
+$blue-bg: linear-gradient(
+  120deg,
+  #084a7c 3.37%,
+  #102238 49.68%,
+  #1d6aa8 86.07%,
+  #084a7c 100.4%
+);
+$light-blue: #49b4d6;
+$light-blue-2: #82d5e8;
+$site-colors: (
+  'black': $black,
+  'white': $white,
+  'orange': $light-blue
+) !default;
+
+$anim: 0.4s ease-out;

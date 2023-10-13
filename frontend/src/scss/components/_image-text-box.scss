@@ -1,0 +1,54 @@
+// ----------  image-text-box
+// ------------------------------------------------------------------------------
+
+@use '../abstracts' as *;
+
+.image-text-box {
+  margin-bottom: 64px;
+  &.reverse {
+    .image-text-box__wrap {
+      flex-direction: row-reverse;
+    }
+    .image-text-box__content {
+      border-radius: 0 0 0 40px;
+    }
+    .image-text-box__image {
+      border-radius: 0 40px 0 0;
+    }
+  }
+}
+.image-text-box__wrap {
+  display: flex;
+}
+.image-text-box__image {
+  flex: 1 0 50%;
+  max-width: 50%;
+  border-radius: 0 0 0 40px;
+  overflow: hidden;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.image-text-box__content {
+  flex: 1 0 50%;
+  max-width: 50%;
+  position: relative;
+  padding: 48px 40px 83px;
+  border-radius: 0 40px 0 0;
+  background: $dark-blue-3;
+  .image-box__comment {
+    padding: 21px 17px;
+    right: auto;
+    left: 40px;
+    bottom: -12px;
+    span {
+      font-weight: 700;
+    }
+  }
+}

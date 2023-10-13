@@ -1,0 +1,47 @@
+// ----------  title-cards
+// ------------------------------------------------------------------------------
+
+@use '../abstracts' as *;
+
+.title-cards {
+  margin-bottom: 64px;
+}
+.title-cards__wrap {
+  text-align: center;
+}
+.title-cards__boxes {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.title-card {
+  flex: 1 1 367px;
+  max-width: 367px;
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
+}
+.title-card__text {
+  background-color: rgba($white, 0.1);
+  padding: 24px 20px;
+  border-radius: 16px;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: -15px;
+    right: 24px;
+    transform: rotate(180deg);
+    height: 15px;
+    width: 32px;
+    border-radius: 150px 150px 0 0;
+    background-color: rgba($white, 0.1);
+  }
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}

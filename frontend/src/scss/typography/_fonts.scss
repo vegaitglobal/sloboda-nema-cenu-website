@@ -1,0 +1,11 @@
+// ----------  fonts
+// ------------------------------------------------------------------------------
+// in mixin call add three parameters (font name, font file name, font-weight, [font-style])
+// font-style is optional
+@use '../abstracts' as *;
+
+@include webFont(Montserrat, Montserrat-Light, 300);
+@include webFont(Montserrat, Montserrat-Regular, 400);
+@include webFont(Montserrat, Montserrat-Medium, 500);
+@include webFont(Montserrat, Montserrat-SemiBold, 600);
+@include webFont(Montserrat, Montserrat-Bold, 700);

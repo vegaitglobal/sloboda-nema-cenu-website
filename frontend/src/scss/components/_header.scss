@@ -1,0 +1,68 @@
+// ----------  header
+// ------------------------------------------------------------------------------
+
+@use '../abstracts' as *;
+
+.header {
+  padding: 30px 0;
+  color: $white;
+  border-top: 6px solid $light-blue;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+}
+.logo__img {
+  display: block;
+  max-width: 45px;
+}
+.header-action {
+  margin-left: auto;
+}
+.nav__list {
+  display: flex;
+}
+.nav__item {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 24px;
+  &.active {
+    .nav__link {
+      color: $light-blue;
+      font-weight: 600;
+    }
+  }
+}
+.nav__link {
+  display: block;
+  color: $white;
+  @include hover {
+    color: $light-blue;
+  }
+}
+.mobile-menu {
+  width: 24px;
+  display: none;
+  &::before,
+  &::after,
+  div {
+    background: $white;
+    content: '';
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    margin: 7px 0;
+    transition: $anim;
+  }
+  &:hover {
+    &::before {
+      transform: translateY(8px) rotate(135deg);
+    }
+    &::after {
+      transform: translateY(-10px) rotate(-135deg);
+    }
+    div {
+      transform: scale(0);
+    }
+  }
+}
