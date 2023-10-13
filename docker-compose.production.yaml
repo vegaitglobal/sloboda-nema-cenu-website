@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: "slobodanemacenu_database"
+    user: root
+    ports:
+      - "#{DATABASE_PORT}#:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=#{DATABASE_PASSWORD}#
+    volumes:
+      - slobodanemacenu_database_data:/var/opt/mssql/data
+    restart: always
+    env_file:
+      - .env
+volumes:
+  slobodanemacenu_database_data:
