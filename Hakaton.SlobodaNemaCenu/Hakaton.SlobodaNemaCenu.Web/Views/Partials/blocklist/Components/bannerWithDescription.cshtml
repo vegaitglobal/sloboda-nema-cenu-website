@@ -13,8 +13,9 @@
                     @item.Text
                 </p>
                 <div class="banner-buttons">
-            
-                    @foreach(var link in item.Buttons){
+
+                    @foreach (var link in item.Buttons)
+                    {
                         <a href="@link.Url" target="@link.Target" class="btn">@link.Name</a>
                     }
                 </div>

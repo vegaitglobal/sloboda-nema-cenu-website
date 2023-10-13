@@ -1,0 +1,40 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.SmallBanner;
+}
+
+<section class="banner small">
+    <div class="wrap">
+        <div class="banner-wrap">
+            <div class="banner-text">
+                <h1 class="h1 banner-title">@item.Title</h1>
+                <p class="text">
+                    @item.Text
+                </p>
+            </div>
+            <div class="banner-img">
+                <img src="@item.BannerImage?.GetCropUrl()" alt="banner image" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="image-box">
+    <div class="wrap">
+        <div class="image-box__wrap">
+            <div class="image-box__img">
+                <a href="/" class="image-box__link">
+                    <img src="@item.ImageExample?.GetCropUrl()" alt="Image exemple" />
+                </a>
+            </div>
+
+            <div class="image-box__comment">
+                <span class="grey">Sloboda Nema Cenu,</span>
+                <span>KC Liman</span>
+                <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
