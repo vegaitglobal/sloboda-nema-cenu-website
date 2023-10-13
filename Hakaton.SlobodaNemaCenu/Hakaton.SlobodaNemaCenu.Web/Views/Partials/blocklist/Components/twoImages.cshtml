@@ -1,0 +1,12 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.TwoImages;
+}
+
+<div class="wrap">
+    <div class="two-images__wrap">
+        <img src="@item.FirstImage?.GetCropUrl()" alt="" />
+        <img src="@item.SecondImage?.GetCropUrl()" alt="" />
+    </div>
+</div>
