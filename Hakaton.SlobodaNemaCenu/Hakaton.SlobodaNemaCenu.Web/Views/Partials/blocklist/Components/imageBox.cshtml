@@ -1,14 +1,13 @@
 ﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
 @{
-    var item = Model.Content as ContentModels.ImageBox;
+    var item = Model.Content as ContentModels.ImageGridItem;
 }
 
-@if (item.Image is null)
+@if (item?.Image is null)
 {
     return;
 }
-
 <section class="image-box no-border">
     <div class="wrap">
         <div class="image-box__wrap">
