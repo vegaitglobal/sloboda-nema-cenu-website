@@ -64,7 +64,7 @@
                                 var countryItem = (CountryDropdownItem)item.Content;
 
                                 <li data-country-key="@countryItem.CountryKey">
-                                    <img src="@countryItem.CountryFlag.Url()" alt="@countryItem.CountryFlag.Name">
+                                    <a href="/@countryItem.CountryKey"><img src="@countryItem.CountryFlag.Url()" alt="@countryItem.CountryFlag.Name"></a>
                                 </li>
                             }
                         </ul>
