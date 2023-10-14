@@ -56,12 +56,5 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("text")]
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Text => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "text");
-
-		///<summary>
-		/// Wide module: Set this if you want wide module width. Default is narrow.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[ImplementPropertyType("wideModule")]
-		public virtual bool WideModule => this.Value<bool>(_publishedValueFallback, "wideModule");
 	}
 }

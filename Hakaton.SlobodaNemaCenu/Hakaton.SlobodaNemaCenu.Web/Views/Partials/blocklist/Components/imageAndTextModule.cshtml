@@ -17,11 +17,23 @@
             </p>
         </div>
         <div class="image-text__image">
-            <img
-            src="./assets/images/star-shape.svg"
-            alt="Svg shape"
-            class="image-text__image-shape"
-            />
+                @if(item.StarColorPicker.Equals("Dark blue"))
+                {
+                    <img
+                    src="./assets/images/shape-2.svg"
+                    alt="Svg shape"
+                    class="image-text__image-shape"
+                    />
+                }
+                else
+                {
+                    <img
+                    src="./assets/images/star-shape.svg"
+                    alt="Svg shape"
+                    class="image-text__image-shape"
+                    />
+                }
+
             <img
             src="@item.Image?.Url()"
             alt="Image alt text"
