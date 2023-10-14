@@ -19,6 +19,25 @@
     <Folder Include="Models\Generated\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\assets\fonts\Montserrat-Bold.woff2" />
+    <None Include="wwwroot\assets\fonts\Montserrat-Light.woff2" />
+    <None Include="wwwroot\assets\fonts\Montserrat-Medium.woff2" />
+    <None Include="wwwroot\assets\fonts\Montserrat-Regular.woff2" />
+    <None Include="wwwroot\assets\fonts\Montserrat-SemiBold.woff2" />
+    <None Include="wwwroot\assets\fonts\svgicons.svg" />
+    <None Include="wwwroot\assets\fonts\svgicons.woff2" />
+    <None Include="wwwroot\assets\fonts\transfonter.org-20231006-200412.zip" />
+    <None Include="wwwroot\assets\images\shape-2.svg" />
+    <None Include="wwwroot\assets\images\star-shape.svg" />
+    <None Include="wwwroot\assets\svg\arrow.svg" />
+    <None Include="wwwroot\assets\svg\facebook.svg" />
+    <None Include="wwwroot\assets\svg\instagram.svg" />
+    <None Include="wwwroot\assets\svg\linkedin.svg" />
+    <None Include="wwwroot\assets\svg\twitter.svg" />
+    <None Include="wwwroot\js\script.js" />
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- Razor files are needed for the backoffice to work correctly -->
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>

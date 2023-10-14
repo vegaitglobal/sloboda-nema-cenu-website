@@ -2,7 +2,17 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.EducationPage>
 @using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
 @{
-	Layout = "_Layout.cshtml";
+    Layout = "_Layout.cshtml";
+    var categories = Model.CategoriesContainer.Children<ContentModels.EducationCategory>() ?? Array.Empty<ContentModels.EducationCategory>();
+    var pageUrl = Model.Url(mode:UrlMode.Absolute);
+    var categoryQueryParam = Context.Request.Query["categoryId"];
+    int categoryId = 0;
+    if(categoryQueryParam.Any()){
+        int.TryParse(categoryQueryParam.First(), out categoryId);
+    }
+    var items = Model.EducationItems.Select(e => e.Content).Cast<ContentModels.EducationItem>()
+    .Where(ei => categoryId == 0 || ei.Category?.Id == categoryId);
+    var checkedCategory = categories.FirstOrDefault(c => c.Id == categoryId);
 }
 
   <main class="main">
@@ -10,19 +20,18 @@
         <div class="wrap">
           <div class="banner-wrap">
             <div class="banner-text">
-              <h1 class="h1 banner-title">Education</h1>
+              <h1 class="h1 banner-title">@Model.Title</h1>
               <p class="text">
-                Udruženje „Sloboda nema cenu” je dobrovoljno, nevladino,
-                neprofitno udruženje, osnovano na neodređeno vreme radi
-                ostvarivanja i unapređivanja zajedničkih i opštih ciljeva i
-                interesa u borbi protiv trgovine ljudima i svih drugih oblika
-                nasilja nad ženama i ciljeva u oblasti zaštite ljudskih prava
-                kroz edukaciju, prevenciju, kulturu i umetnost.
+                @Model.Text
               </p>
             </div>
-            <div class="banner-img">
-              <img src="./assets/images/bird.png" alt="banner image" />
-            </div>
+            @if(Model.BannerImage is not null){
+                    <div class="banner-img">
+                        <img src="@Model.BannerImage.GetCropUrl()" alt="banner image" />
+                    </div>
+            }
+            
+       
           </div>
         </div>
       </section>
@@ -30,41 +39,23 @@
         <div class="wrap">
           <div class="checkbox-dropdown">
             <button class="btn checkbox-dropdown-btn js-dropdown-btn">
-              Svi <span class="icon icon-dropdown"></span>
+                    @(@checkedCategory?.Title ?? "Svi" ) <span class="icon icon-dropdown"></span>
             </button>
             <ul class="checkbox-dropdown-list js-dropdown-list">
               <li>
                 <label>
-                  <input type="checkbox" value="Svi" name="Svi" />
+                            <input type="checkbox" value="Svi" name="Svi" onClick="clickCategory('@pageUrl')" checked />
                   <span class="checkmark"></span>Svi</label
                 >
               </li>
-              <li>
-                <label>
-                  <input type="checkbox" value="mediji" name="mediji" /><span
-                    class="checkmark"
-                  ></span
-                  >Mediji</label
-                >
-              </li>
-              <li>
-                <label>
-                  <input
-                    type="checkbox"
-                    value="profesionalci"
-                    name="profesionalci"
-                  /><span class="checkmark"></span>Profesionalci</label
-                >
-              </li>
-              <li>
-                <label>
-                  <input
-                    type="checkbox"
-                    value="Gradjani"
-                    name="Gradjani"
-                  /><span class="checkmark"></span>Gradjani</label
-                >
-              </li>
+              @foreach(var item in categories){
+                        var url = $"{pageUrl}?categoryId={item.Id}";
+                        <li >
+                        <label>
+                                <input type="checkbox" value="mediji" name="mediji" onClick="clickCategory('@url')" /><span class="checkmark"></span>@item.Title
+                        </label>
+                    </li>
+              }
             </ul>
           </div>
         </div>
@@ -72,167 +63,16 @@
       <section class="education-cards">
         <div class="wrap">
           <div class="education-cards__wrap">
-            <div class="education-card profesional">
-              <div class="education-card-top">
-                <img src="./assets/images/education-img.png" alt="" />
-                <div class="image-box__comment">
-                  <span>profesionalci</span>
-                  <div class="triangle-comment">
-                    <span class="sr-only">Triangle shape</span>
-                  </div>
-                </div>
-              </div>
-              <div class="education-card-content">
-                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
-                <div class="education-icons">
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-download"
-                      ><span class="sr-only">Download</span></span
-                    ></a
-                  >
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-share"
-                      ><span class="sr-only">Share</span></span
-                    ></a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="education-card profesional">
-              <div class="education-card-top">
-                <img src="./assets/images/education-img.png" alt="" />
-                <div class="image-box__comment">
-                  <span>profesionalci</span>
-                  <div class="triangle-comment">
-                    <span class="sr-only">Triangle shape</span>
-                  </div>
-                </div>
-              </div>
-              <div class="education-card-content">
-                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
-                <div class="education-icons">
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-download"
-                      ><span class="sr-only">Download</span></span
-                    ></a
-                  >
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-share"
-                      ><span class="sr-only">Share</span></span
-                    ></a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="education-card profesional">
-              <div class="education-card-top">
-                <img src="./assets/images/education-img.png" alt="" />
-                <div class="image-box__comment">
-                  <span>profesionalci</span>
-                  <div class="triangle-comment">
-                    <span class="sr-only">Triangle shape</span>
-                  </div>
-                </div>
-              </div>
-              <div class="education-card-content">
-                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
-                <div class="education-icons">
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-download"
-                      ><span class="sr-only">Download</span></span
-                    ></a
-                  >
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-share"
-                      ><span class="sr-only">Share</span></span
-                    ></a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="education-card profesional">
-              <div class="education-card-top">
-                <img src="./assets/images/education-img.png" alt="" />
-                <div class="image-box__comment">
-                  <span>profesionalci</span>
-                  <div class="triangle-comment">
-                    <span class="sr-only">Triangle shape</span>
-                  </div>
-                </div>
-              </div>
-              <div class="education-card-content">
-                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
-                <div class="education-icons">
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-download"
-                      ><span class="sr-only">Download</span></span
-                    ></a
-                  >
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-share"
-                      ><span class="sr-only">Share</span></span
-                    ></a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="education-card people">
-              <div class="education-card-top">
-                <img src="./assets/images/education-img.png" alt="" />
-                <div class="image-box__comment">
-                  <span>gradjani</span>
-                  <div class="triangle-comment">
-                    <span class="sr-only">Triangle shape</span>
-                  </div>
-                </div>
-              </div>
-              <div class="education-card-content">
-                <p class="education-card__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-                <div class="education-icons">
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-download"
-                      ><span class="sr-only">Download</span></span
-                    ></a
-                  >
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-share"
-                      ><span class="sr-only">Share</span></span
-                    ></a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="education-card media">
-              <div class="education-card-top">
-                <img src="./assets/images/education-img.png" alt="" />
-                <div class="image-box__comment">
-                  <span>mediji</span>
-                  <div class="triangle-comment">
-                    <span class="sr-only">Triangle shape</span>
-                  </div>
-                </div>
-              </div>
-              <div class="education-card-content">
-                <p class="education-card__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-                <div class="education-icons">
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-download"
-                      ><span class="sr-only">Download</span></span
-                    ></a
-                  >
-                  <a href="" class="education-icon"
-                    ><span class="icon icon-share"
-                      ><span class="sr-only">Share</span></span
-                    ></a
-                  >
-                </div>
-              </div>
-            </div>
+                @foreach(var item in items){
+                    @Html.Partial("~/Views/Partials/blocklist/Components/educationItem.cshtml", item)
+                }
           </div>
         </div>
       </section>
     </main>
+
+<script>
+    function clickCategory(url){
+        location.href = url;
+    }
+</script>
