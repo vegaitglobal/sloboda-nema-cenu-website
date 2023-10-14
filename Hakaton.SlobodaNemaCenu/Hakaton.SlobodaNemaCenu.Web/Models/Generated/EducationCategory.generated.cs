@@ -50,6 +50,14 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		// properties
 
 		///<summary>
+		/// Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("color")]
+		public virtual string Color => this.Value<string>(_publishedValueFallback, "color");
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
