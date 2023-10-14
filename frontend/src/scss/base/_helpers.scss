@@ -1,34 +1,22 @@
 // ----------  helpers
 // ------------------------------------------------------------------------------
 
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 * {
-	box-sizing: border-box;
-	&::before,
-	&::after {
-		box-sizing: border-box;
-	}
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
 }
 
 .sr-only {
-	@include visually-hidden;
+  @include visually-hidden;
 }
 
 .has-cover {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-
-// Theming and colors iterator
-// @each $colors-name in $site-colors {
-// 	$name: nth($colors-name, 1);
-// 	$color: nth($colors-name, 2);
-// 	.bg-#{$name} {
-// 		background-color: $color;
-// 	}
-// 	.color-#{$name} {
-// 		color: $color;
-// 	}
-// }

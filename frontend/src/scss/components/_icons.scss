@@ -3,6 +3,9 @@
 .icons {
   display: flex;
   margin-bottom: 23px;
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
 }
 .icon-link {
   display: inline-block;

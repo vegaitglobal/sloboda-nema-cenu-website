@@ -15,7 +15,11 @@
     animation: none;
     -webkit-text-stroke-color: #084a7c;
     mix-blend-mode: screen;
+    white-space: normal;
     filter: none;
+    @include media-breakpoint-down(lg) {
+      font-size: 14vw;
+    }
   }
 }
 .image-grid__content {
@@ -24,22 +28,29 @@
 .image-grid__images {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 20px;
   margin-top: -60px;
+  @include media-breakpoint-down(lg) {
+    margin-top: -50px;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: -20px;
+  }
 }
 .image-grid__link {
   display: block;
-  flex: 1 0 275px;
+  flex: 1 1 275px;
   max-width: 275px;
   height: 275px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  margin-bottom: 12px;
   transition: $anim;
-  &:not(:nth-of-type(4n)) {
-    margin-right: 12px;
-  }
+  margin: 0 5px 12px;
   img {
     position: absolute;
     top: 0;

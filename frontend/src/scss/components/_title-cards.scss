@@ -8,18 +8,33 @@
 }
 .title-cards__wrap {
   text-align: center;
+  @include media-breakpoint-down(sm) {
+    text-align: left;
+  }
 }
 .title-cards__boxes {
-  text-align: left;
-  display: flex;
-  justify-content: center;
   margin-bottom: 36px;
+  @include media-breakpoint-up(md) {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+  }
 }
 .title-card {
-  flex: 1 1 367px;
-  max-width: 367px;
-  &:not(:last-of-type) {
-    margin-right: 20px;
+  @include media-breakpoint-up(md) {
+    flex: 1 1 367px;
+    max-width: 367px;
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 30px;
+  }
+}
+.title-card__title {
+  @include media-breakpoint-down(sm) {
+    padding-left: 20px;
   }
 }
 .title-card__text {
