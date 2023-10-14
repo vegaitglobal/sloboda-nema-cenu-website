@@ -1,0 +1,23 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.ImageGrid;
+}
+<section class="image-grid">
+    <div class="wrap">
+        <div class="image-grid-wrap">
+            <div class="background-text">
+                <span class="background-text__content"><span>@item.Title</span></span>
+            </div>
+            <div class="image-grid__content">
+                <div class="image-grid__images">
+                    @Html.GetBlockListHtml(item.Images)
+                </div>
+                @if (item.Button is not null)
+                {
+                    <a href="@item.Button.Url" class="btn">@item.Button.Name</a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
