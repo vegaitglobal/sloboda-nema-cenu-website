@@ -1,0 +1,33 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.ImageAndTextModule;
+}
+
+<section class="image-text">
+    <div class="wrap">
+        <div class="image-text__wrap">
+        <div class="image-text__content">
+            <h2 class="h2 image-text__title">@item.Title</h2>
+            <p class="image-text__paragraph bold text-small">
+            @item.IntroText
+            </p>
+            <p class="image-text__paragraph text-small">
+            @item.BodyCopy
+            </p>
+        </div>
+        <div class="image-text__image">
+            <img
+            src="./assets/images/star-shape.svg"
+            alt="Svg shape"
+            class="image-text__image-shape"
+            />
+            <img
+            src="@item.Image?.Url()"
+            alt="Image alt text"
+            class="image-text__image-main"
+            />
+        </div>
+        </div>
+    </div>
+</section>
