@@ -2,34 +2,6 @@
 @use 'breakpoints' as *;
 @use 'sass:math';
 
-// ----------  Text Overflow
-// ------------------------------------------------------------------------------
-@mixin text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-// ----------  Vertical / horizontal alignment
-// ------------------------------------------------------------------------------
-@mixin align($position: relative, $direction: x) {
-  position: $position;
-  @if ($direction == 'y') {
-    top: 50%;
-    transform: translateY(-50%);
-  } @else if ($direction == 'xy') {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } @else {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-// example: @include align(absolute, xy); for centering both axis'
-// default @include align(); will be relative on x axis
-
 //	Visually hidden mixin for accessibility
 @mixin visually-hidden() {
   border: 0;
@@ -85,16 +57,6 @@ $path: '../assets/fonts' !default;
   }
 }
 
-// ----------  Animation mixin
-// ------------------------------------------------------------------------------
-
-// @include animation {transition: color 3s ease;}
-@mixin animation {
-  .loaded & {
-    @content;
-  }
-}
-
 // ----------  Iconfont mixin
 // ------------------------------------------------------------------------------
 // usage @include icon(tv, after) {your css properties}
@@ -106,39 +68,6 @@ $path: '../assets/fonts' !default;
     content: font-char('ico-#{$name}');
     @content;
   }
-}
-
-$window-width: 1920px;
-
-@function remove-whitespace($str) {
-  @while str-index($str, ' ') != null {
-    $index: str-index($str, ' ');
-    $str: #{str-slice($str, 0, $index - 1)}#{str-slice($str, $index + 1)};
-  }
-  @return $str;
-}
-
-@function min-size($min, $val) {
-  @if $min > $val {
-    @return $val;
-  }
-  @return $min;
-}
-
-@function max-size($val) {
-  @return math.floor($val * 1.4);
-}
-
-@function relative-size($val) {
-  @return math.div(($val * 100vw), $window-width);
-}
-
-@function fluid($min, $value: $min) {
-  $fluid: #{(
-      'clamp(' min-size($min, $value) ',' relative-size($value) ','
-        max-size($value) ')'
-    )};
-  @return remove-whitespace($fluid);
 }
 
 // usage:
@@ -167,60 +96,4 @@ $window-width: 1920px;
       #{$property}: #{$tablet};
     }
   }
-}
-
-// ----------  px to viewport mixin
-// ------------------------------------------------------------------------------
-
-// usage - single: width: vp(250px) or multiple args: padding: vp(20px 10px 30px)
-// with built-in method calc(#{vp(250px)} + 50%);
-
-$unitValue: 'vw';
-$lg: 1920px;
-$md: 768px;
-$sm: 360px;
-
-@function unit($num, $unit, $screen: $lg) {
-  $vw-context: ($screen * 0.01);
-  @if $num == 0 {
-    $num: 0px;
-  }
-  $size: math.div($num, $vw-context) * 1 + #{$unit};
-  @return $size;
-}
-
-@function vp($numbers) {
-  $numberArray: ();
-  @each $num in $numbers {
-    $numberArray: append(
-      $numberArray,
-      unquote(unit($num, $unitValue)),
-      'space'
-    );
-  }
-  @return $numberArray;
-}
-
-@function vpm($numbers) {
-  $numberArray: ();
-  @each $num in $numbers {
-    $numberArray: append(
-      $numberArray,
-      unquote(unit($num, $unitValue, $md)),
-      'space'
-    );
-  }
-  @return $numberArray;
-}
-
-@function vps($numbers) {
-  $numberArray: ();
-  @each $num in $numbers {
-    $numberArray: append(
-      $numberArray,
-      unquote(unit($num, $unitValue, $sm)),
-      'space'
-    );
-  }
-  @return $numberArray;
 }

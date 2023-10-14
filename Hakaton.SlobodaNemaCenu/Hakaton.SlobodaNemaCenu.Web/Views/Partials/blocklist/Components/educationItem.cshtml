@@ -1,0 +1,61 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.EducationItem>
+@{
+    var item = Model;
+    var category = item.Category as ContentModels.EducationCategory;
+    var categoryName = getClass((item.Category as ContentModels.EducationCategory)?.Color?.ToLowerInvariant());
+
+}
+
+<div class="education-card @categoryName">
+    <div class="education-card-top">
+        @if(item.Image is not null){
+            <img src="@item.Image.Url()" alt="" />
+        }
+        <div class="image-box__comment">
+            <span>@category.Title</span>
+            <div class="triangle-comment">
+                <span class="sr-only">Triangle shape</span>
+            </div>
+        </div>
+    </div>
+    <div class="education-card-content">
+        <p class="education-card__text">@item.Title</p>
+        <div class="education-icons">
+            @if(item.Download is not null){
+                <a href="@item.Download.Url()" class="education-icon" download>
+                    <span class="icon icon-download"><span class="sr-only">Download</span></span>
+                </a>
+            }
+            @if(item.Url is not null){
+                <a href="@item.Url.Url" class="education-icon">
+                    <span class="icon icon-share"><span class="sr-only">Share</span></span>
+                </a>
+            }
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+@functions{
+
+    string getClass(string name) {
+        if (string.IsNullOrEmpty(name)) return string.Empty;
+
+        var colorDictionary = new Dictionary<string, string>{
+            {"light blue", "profesional"},
+            {"blue", "people"},
+            {"dark blue","media" } };
+        if(colorDictionary.TryGetValue(name, out var value)){
+              return value;
+          }
+      
+          return "profesional";
+
+    }
+    
+    
+}

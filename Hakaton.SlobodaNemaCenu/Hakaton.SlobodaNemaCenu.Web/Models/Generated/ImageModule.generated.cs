@@ -48,7 +48,7 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		}
 
 		// properties
-		
+
 		///<summary>
 		/// Clickable Link
 		///</summary>

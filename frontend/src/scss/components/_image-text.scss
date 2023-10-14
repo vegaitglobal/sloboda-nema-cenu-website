@@ -5,15 +5,25 @@
 
 .image-text {
   margin: 115px 0 64px;
+  @include media-breakpoint-down(md) {
+    margin: 90px 0 64px;
+  }
 }
 .image-text__wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .image-text__content {
-  max-width: 560px;
-  margin-right: 48px;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 56px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 560px;
+    margin-right: 48px;
+  }
 }
 .image-text__paragraph {
   &.bold {
@@ -25,6 +35,9 @@
 }
 .image-text__image {
   position: relative;
+  @include media-breakpoint-down(md) {
+    padding-left: 34px;
+  }
 }
 
 .image-text__image-main {
@@ -34,6 +47,10 @@
   width: 100%;
   height: 100%;
   max-width: 463px;
+  @include media-breakpoint-down(md) {
+    border-radius: 40px 40px 0;
+    max-width: 100%;
+  }
 }
 
 .image-text__image-shape {
@@ -41,4 +58,9 @@
   top: -49px;
   left: -66px;
   max-width: 147px;
+  @include media-breakpoint-down(md) {
+    max-width: 92px;
+    top: -43px;
+    left: 0;
+  }
 }
