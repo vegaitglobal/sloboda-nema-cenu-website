@@ -106,6 +106,14 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		public virtual global::Umbraco.Cms.Core.Models.Link NavigationButtonLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "navigationButtonLink");
 
 		///<summary>
+		/// Navigation Flags
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("navigationFlags")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel NavigationFlags => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "navigationFlags");
+
+		///<summary>
 		/// Navigation Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]

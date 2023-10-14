@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 {
-	/// <summary>Small Banner</summary>
-	[PublishedModel("smallBanner")]
-	public partial class SmallBanner : PublishedElementModel
+	/// <summary>Education Page</summary>
+	[PublishedModel("educationPage")]
+	public partial class EducationPage : PublishedContentModel, IPageBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		public new const string ModelTypeAlias = "smallBanner";
+		public new const string ModelTypeAlias = "educationPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
@@ -34,14 +34,14 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<SmallBanner, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<EducationPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public SmallBanner(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public EducationPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -58,28 +58,20 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BannerImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "bannerImage");
 
 		///<summary>
-		/// BoxComment
+		/// Categories Container
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("boxComment")]
-		public virtual string BoxComment => this.Value<string>(_publishedValueFallback, "boxComment");
+		[ImplementPropertyType("categoriesContainer")]
+		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent CategoriesContainer => this.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(_publishedValueFallback, "categoriesContainer");
 
 		///<summary>
-		/// Comment
+		/// Education Items
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("comment")]
-		public virtual string Comment => this.Value<string>(_publishedValueFallback, "comment");
-
-		///<summary>
-		/// Image Example
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("imageExample")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageExample => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageExample");
+		[ImplementPropertyType("educationItems")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel EducationItems => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "educationItems");
 
 		///<summary>
 		/// Text
@@ -90,19 +82,19 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		public virtual string Text => this.Value<string>(_publishedValueFallback, "text");
 
 		///<summary>
+		/// SEO Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sEOTitle")]
+		public virtual string SEotitle => global::Hakaton.SlobodaNemaCenu.Web.Models.Generated.PageBase.GetSEotitle(this, _publishedValueFallback);
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
-		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
-
-		///<summary>
-		/// Triangle Comment
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("triangleComment")]
-		public virtual string TriangleComment => this.Value<string>(_publishedValueFallback, "triangleComment");
+		public virtual string Title => global::Hakaton.SlobodaNemaCenu.Web.Models.Generated.PageBase.GetTitle(this, _publishedValueFallback);
 	}
 }

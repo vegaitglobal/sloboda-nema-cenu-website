@@ -1,0 +1,78 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.EducationPage>
+@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@{
+    Layout = "_Layout.cshtml";
+    var categories = Model.CategoriesContainer.Children<ContentModels.EducationCategory>() ?? Array.Empty<ContentModels.EducationCategory>();
+    var pageUrl = Model.Url(mode:UrlMode.Absolute);
+    var categoryQueryParam = Context.Request.Query["categoryId"];
+    int categoryId = 0;
+    if(categoryQueryParam.Any()){
+        int.TryParse(categoryQueryParam.First(), out categoryId);
+    }
+    var items = Model.EducationItems.Select(e => e.Content).Cast<ContentModels.EducationItem>()
+    .Where(ei => categoryId == 0 || ei.Category?.Id == categoryId);
+    var checkedCategory = categories.FirstOrDefault(c => c.Id == categoryId);
+}
+
+  <main class="main">
+      <section class="banner small">
+        <div class="wrap">
+          <div class="banner-wrap">
+            <div class="banner-text">
+              <h1 class="h1 banner-title">@Model.Title</h1>
+              <p class="text">
+                @Model.Text
+              </p>
+            </div>
+            @if(Model.BannerImage is not null){
+                    <div class="banner-img">
+                        <img src="@Model.BannerImage.GetCropUrl()" alt="banner image" />
+                    </div>
+            }
+            
+       
+          </div>
+        </div>
+      </section>
+      <section class="education-filters">
+        <div class="wrap">
+          <div class="checkbox-dropdown">
+            <button class="btn checkbox-dropdown-btn js-dropdown-btn">
+                    @(@checkedCategory?.Title ?? "Svi" ) <span class="icon icon-dropdown"></span>
+            </button>
+            <ul class="checkbox-dropdown-list js-dropdown-list">
+              <li>
+                <label>
+                            <input type="checkbox" value="Svi" name="Svi" onClick="clickCategory('@pageUrl')" checked />
+                  <span class="checkmark"></span>Svi</label
+                >
+              </li>
+              @foreach(var item in categories){
+                        var url = $"{pageUrl}?categoryId={item.Id}";
+                        <li >
+                        <label>
+                                <input type="checkbox" value="mediji" name="mediji" onClick="clickCategory('@url')" /><span class="checkmark"></span>@item.Title
+                        </label>
+                    </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="education-cards">
+        <div class="wrap">
+          <div class="education-cards__wrap">
+                @foreach(var item in items){
+                    @Html.Partial("~/Views/Partials/blocklist/Components/educationItem.cshtml", item)
+                }
+          </div>
+        </div>
+      </section>
+    </main>
+
+<script>
+    function clickCategory(url){
+        location.href = url;
+    }
+</script>
