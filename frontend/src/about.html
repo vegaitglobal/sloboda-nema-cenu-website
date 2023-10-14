@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sloboda Nema Cenu</title>
     <link href="./favicon.ico" rel="icon" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header class="header">
@@ -52,7 +52,17 @@
             </ul>
           </nav>
           <div class="header-action">
-            <div class="language-dropdown"></div>
+            <div class="language-dropdown">
+              <button class="btn js-dropdown-btn checkbox-dropdown-btn">
+                <img src="./assets/images/state.svg" alt="" />
+                <span class="icon icon-dropdown"></span>
+              </button>
+              <ul class="js-dropdown-list checkbox-dropdown-list">
+                <li>
+                  <img src="./assets/images/state.svg" alt="" />
+                </li>
+              </ul>
+            </div>
             <button type="button" class="mobile-menu">
               <div><span class="sr-only">Mobile menu button</span></div>
             </button>
@@ -358,6 +368,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

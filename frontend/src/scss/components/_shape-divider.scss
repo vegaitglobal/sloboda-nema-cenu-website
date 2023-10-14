@@ -5,7 +5,9 @@
 
 .shape-divider {
   margin-bottom: 64px;
+  overflow: hidden;
   img {
     display: block;
+    min-width: 1123px;
   }
 }
