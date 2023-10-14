@@ -38,6 +38,12 @@
     <None Include="wwwroot\js\script.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Partials\blocklist\Components\imageGrid.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- Razor files are needed for the backoffice to work correctly -->
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
