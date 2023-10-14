@@ -42,7 +42,7 @@
                                 </button>
                             }
 
-                            if (currentCulture.Equals("en-US"))
+                            if (currentCulture.Equals("en"))
                             {
                                 <button class="btn js-dropdown-btn checkbox-dropdown-btn">
                                     <img src="./assets/images/great-britain.png" alt="CountryFlag">
@@ -64,7 +64,7 @@
                                 var countryItem = (CountryDropdownItem)item.Content;
 
                                 <li data-country-key="@countryItem.CountryKey">
-                                    <a href="/@countryItem.CountryKey"><img src="@countryItem.CountryFlag.Url()" alt="@countryItem.CountryFlag.Name"></a>
+                                    <a href="/@countryItem.CountryKey"><img src="@countryItem.CountryFlag?.Url()" alt="@countryItem.CountryFlag?.Name"></a>
                                 </li>
                             }
                         </ul>
