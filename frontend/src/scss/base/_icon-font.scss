@@ -1,9 +1,9 @@
 @font-face {
 	font-family: "svgicons";
 	font-display: block;
-	src: url("../assets/fonts/svgicons.woff2?164d27d0c41adc3636551b42a8ff351a") format("woff2"),
-url("../assets/fonts/svgicons.woff?164d27d0c41adc3636551b42a8ff351a") format("woff"),
-url("../assets/fonts/svgicons.svg?164d27d0c41adc3636551b42a8ff351a#svgicons") format("svg");
+	src: url("../assets/fonts/svgicons.woff2?ea7b42ea431ad2475cebe51390efb192") format("woff2"),
+url("../assets/fonts/svgicons.woff?ea7b42ea431ad2475cebe51390efb192") format("woff"),
+url("../assets/fonts/svgicons.svg?ea7b42ea431ad2475cebe51390efb192#svgicons") format("svg");
 }
 
 .icon {
@@ -20,15 +20,24 @@ url("../assets/fonts/svgicons.svg?164d27d0c41adc3636551b42a8ff351a#svgicons") fo
 .icon-arrow:before {
 	content: "\f101";
 }
-.icon-facebook:before {
+.icon-download:before {
 	content: "\f102";
 }
-.icon-instagram:before {
+.icon-dropdown:before {
 	content: "\f103";
 }
-.icon-linkedin:before {
+.icon-facebook:before {
 	content: "\f104";
 }
-.icon-twitter:before {
+.icon-instagram:before {
 	content: "\f105";
+}
+.icon-linkedin:before {
+	content: "\f106";
+}
+.icon-share:before {
+	content: "\f107";
+}
+.icon-twitter:before {
+	content: "\f108";
 }
