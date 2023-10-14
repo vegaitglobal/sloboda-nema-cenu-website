@@ -16,7 +16,6 @@ RUN dotnet publish -c Release -o /app/publish
 
 RUN cp -R /src/Hakaton.SlobodaNemaCenu.Web/wwwroot/ /app/publish/
 RUN cp -R /src/Hakaton.SlobodaNemaCenu.Web/Views/ /app/publish/
-RUN cp -R /src/Hakaton.SlobodaNemaCenu.Web/Media/ /app/publish/
 
 FROM base AS final
 WORKDIR /app

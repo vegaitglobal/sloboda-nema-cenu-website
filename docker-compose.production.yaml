@@ -10,9 +10,9 @@ services:
       - ASPNETCORE_ENVIRONMENT=#{ASPNETCORE_ENVIRONMENT}#
       - ConnectionStrings__umbracoDbDSN=#{CONNECTION_STRING}#
     volumes:
-      - ./data/media/:/app/Media
       - ./data/uploads/:/app/uploads
       - ./data/wwwroot/uploads/:/app/wwwroot/uploads
+      - ./data/media/:/app/wwwroot/media
     restart: always
   database:
     image: mcr.microsoft.com/mssql/server:2022-latest
