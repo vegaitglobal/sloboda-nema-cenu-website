@@ -33,12 +33,22 @@
                     class="image-text__image-shape"
                     />
                 }
+                
+                @if (item.Image != null)
+                {
+                    <img               
+                    src="@item.Image?.Url()"
+                    class="image-text__image-main"
+                    />
+                }
+                else
+                {
+                    <img               
+                    alt="Image alt text"
+                    class="image-text__image-main"
+                    />
+                }
 
-            <img
-            src="@item.Image?.Url()"
-            alt="Image alt text"
-            class="image-text__image-main"
-            />
         </div>
         </div>
     </div>
