@@ -1,0 +1,27 @@
+﻿@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@{
+    var item = Model.Content as ContentModels.ImageAndTextV2;
+}
+
+<section class="image-text-box @(item.Flip ? "reverse" : string.Empty)">
+    <div class="wrap">
+        <div class="image-text-box__wrap">
+            <div class="image-text-box__image">
+                <img src="@item.Image?.GetCropUrl()" alt="Image exemple" />
+            </div>
+            <div class="image-text-box__content">
+                <h4 class="h4">@item.Title</h4>
+                <p class="text-small">
+                   @item.Description
+                </p>
+                <div class="image-box__comment">
+                    <span>@item.ShortText</span>
+                    <div class="triangle-comment">
+                        <span class="sr-only">Triangle shape</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
