@@ -1,9 +1,9 @@
 @font-face {
 	font-family: "svgicons";
 	font-display: block;
-	src: url("../assets/fonts/svgicons.woff2?ca45c90059268b8c3d9a7dd9b7a322e0") format("woff2"),
-url("../assets/fonts/svgicons.woff?ca45c90059268b8c3d9a7dd9b7a322e0") format("woff"),
-url("../assets/fonts/svgicons.svg?ca45c90059268b8c3d9a7dd9b7a322e0#svgicons") format("svg");
+	src: url("../assets/fonts/svgicons.woff2?a9c76bc6aee88b6d108c68f76824b77f") format("woff2"),
+url("../assets/fonts/svgicons.woff?a9c76bc6aee88b6d108c68f76824b77f") format("woff"),
+url("../assets/fonts/svgicons.svg?a9c76bc6aee88b6d108c68f76824b77f#svgicons") format("svg");
 }
 
 .icon {
@@ -20,15 +20,24 @@ url("../assets/fonts/svgicons.svg?ca45c90059268b8c3d9a7dd9b7a322e0#svgicons") fo
 .icon-arrow:before {
 	content: "\f101";
 }
-.icon-facebook:before {
+.icon-download:before {
 	content: "\f102";
 }
-.icon-instagram:before {
+.icon-dropdown:before {
 	content: "\f103";
 }
-.icon-linkedin:before {
+.icon-facebook:before {
 	content: "\f104";
 }
-.icon-twitter:before {
+.icon-instagram:before {
 	content: "\f105";
+}
+.icon-linkedin:before {
+	content: "\f106";
+}
+.icon-share:before {
+	content: "\f107";
+}
+.icon-twitter:before {
+	content: "\f108";
 }

@@ -7,9 +7,12 @@
     font-size: 18px;
     line-height: 21px;
     font-weight: 400;
-    width:50%
+    width:50%;
+    
   }
-
+  .space {
+    margin-bottom: 1.5rem;
+  }
   .contact {
     margin: 100px 0 60px;
     &.small {
@@ -29,9 +32,7 @@
     object-fit: cover; 
    }
 
-  .contact-text {
-    max-width: 753px;
-  }
+
   .contact-subtitle {
     font-size: 20px;
     font-weight: 400;
@@ -46,7 +47,15 @@
     font-weight: 400;
     line-height: normal;
     color: $light-blue;
-    margin-bottom: 14px;
+   
     font-weight: bold;
   }
+
+  .link-container{
+    margin-bottom: 1.8rem;
+  }
+ 
+
+  
+  
   
