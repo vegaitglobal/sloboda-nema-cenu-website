@@ -28,7 +28,7 @@
                 </nav>
             }
             <div class="header-action">
-                @if(homePage.NavigationFlags != null && homePage.NavigationFlags.Any())
+                @if(homePage.NavigationFlags?.Any() ?? false)
                 {
                     <div class="language-dropdown">
                         @{

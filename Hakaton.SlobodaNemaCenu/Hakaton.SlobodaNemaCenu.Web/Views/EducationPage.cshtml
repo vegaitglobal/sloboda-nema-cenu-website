@@ -5,14 +5,21 @@
     Layout = "_Layout.cshtml";
     var categories = Model.CategoriesContainer.Children<ContentModels.EducationCategory>() ?? Array.Empty<ContentModels.EducationCategory>();
     var pageUrl = Model.Url(mode:UrlMode.Absolute);
-    var categoryQueryParam = Context.Request.Query["categoryId"];
-    int categoryId = 0;
-    if(categoryQueryParam.Any()){
-        int.TryParse(categoryQueryParam.First(), out categoryId);
+    string categoryIdsQueryParam = Context.Request.Query["categoryIds"].FirstOrDefault();
+    List<int> categoryIds; 
+    if (string.IsNullOrWhiteSpace(categoryIdsQueryParam)) {
+        categoryIds = Enumerable.Empty<int>().ToList();
+    }
+    else
+    {
+        categoryIds = categoryIdsQueryParam.Split(",")
+                .Select(categoryIdStr => int.TryParse(categoryIdStr, out int categoryId) ? categoryId : int.MinValue)
+                .Where(categoryId => categoryId != int.MinValue)
+                .ToList();
     }
     var items = Model.EducationItems.Select(e => e.Content).Cast<ContentModels.EducationItem>()
-    .Where(ei => categoryId == 0 || ei.Category?.Id == categoryId);
-    var checkedCategory = categories.FirstOrDefault(c => c.Id == categoryId);
+                    .Where(ei => !categoryIds.Any() || categoryIds.Contains(ei.Category.Id));
+    var checkedCategories = categories.Where(c => categoryIds.Contains(c.Id));
 }
 
   <main class="main">
@@ -39,20 +46,19 @@
         <div class="wrap">
           <div class="checkbox-dropdown">
             <button class="btn checkbox-dropdown-btn js-dropdown-btn">
-                    @(@checkedCategory?.Title ?? "Svi" ) <span class="icon icon-dropdown"></span>
+                    @(@checkedCategories.Any() ? string.Join(", ", checkedCategories.Select(category => category.Name)) : @Umbraco.GetDictionaryValue("allCategories", "All")) <span class="icon icon-dropdown"></span>
             </button>
             <ul class="checkbox-dropdown-list js-dropdown-list">
               <li>
                 <label>
-                            <input type="checkbox" value="Svi" name="Svi" onClick="clickCategory('@pageUrl')" checked />
+                            <input type="checkbox" data-category-id="-1" class="educationCategory" value="@Umbraco.GetDictionaryValue("allCategories", "All")" name="Svi" onClick="clickCategory(event, '@pageUrl')" checked="@(!checkedCategories.Any())" />
                   <span class="checkmark"></span>Svi</label
                 >
               </li>
-              @foreach(var item in categories){
-                        var url = $"{pageUrl}?categoryId={item.Id}";
-                        <li >
+              @foreach(var item in categories) {
+                    <li>
                         <label>
-                                <input type="checkbox" value="mediji" name="mediji" onClick="clickCategory('@url')" /><span class="checkmark"></span>@item.Title
+                                <input class="educationCategory" data-category-id="@item.Id" type="checkbox" name="mediji" onClick="clickCategory(event, '@pageUrl')" checked="@checkedCategories.Any(c => c.Id == item.Id)" /><span class="checkmark"></span>@item.Title
                         </label>
                     </li>
               }
@@ -72,7 +78,53 @@
     </main>
 
 <script>
-    function clickCategory(url){
+    function clickCategory(event, baseUrl){
+        var inputElements = document.getElementsByClassName('educationCategory');
+        var url = baseUrl + "?categoryIds="
+        var allCategoriesCheckedElement = null;
+        var multipleOptionsSelected = false;
+
+        var allCheckedOptions = [];
+
+        for (const currentElement of inputElements) {
+            if (currentElement.checked) {
+                if (currentElement.dataset.categoryId == "-1") {
+                    allCategoriesCheckedElement = currentElement;
+                }
+                else {
+                    allCheckedOptions.push(currentElement);
+                }
+            }
+        }
+
+
+        if (allCategoriesCheckedElement) {
+            if (allCategoriesCheckedElement == event.srcElement) {
+                for (const checkedOption of allCheckedOptions) {
+                    checkedOption.checked = false;
+                }
+                url = baseUrl;
+            }
+            else {
+                allCategoriesCheckedElement.checked = false;
+            }
+        }
+
+        if (!allCategoriesCheckedElement || !allCategoriesCheckedElement.checked) {
+            if (allCheckedOptions.length > 0) {
+                for (const checkedOption of allCheckedOptions) {
+                    url += checkedOption.dataset.categoryId + ",";
+                }
+            }
+            else {
+                url = baseUrl;
+            }
+        }
+
+        if (url.endsWith(",")) {
+            url = url.substring(0, url.length - 1);
+        }
+
         location.href = url;
     }
 </script>
