@@ -28,16 +28,48 @@
                 </nav>
             }
             <div class="header-action">
-                @*TREBA DODATI IKONICE ZA JEZIKE I NAPRAVITI FUNKCIONALNOST ZA JEZIKE*@
-                <div class="language-dropdown">
-                    @if(homePage.Cultures != null && homePage.Cultures.Any())
-                    {
-                        @foreach (var lang in homePage.Cultures)
-                        {
-                            <p>@lang.Key</p>
+                @if(homePage.NavigationFlags != null && homePage.NavigationFlags.Any())
+                {
+                    <div class="language-dropdown">
+                        @{
+                            var currentCulture = Model.GetCultureFromDomains();
+
+                            if (currentCulture.Equals("sr"))
+                            {
+                                <button class="btn js-dropdown-btn checkbox-dropdown-btn">
+                                    <img src="./assets/images/state.svg" alt="">
+                                    <span class="icon icon-dropdown"></span>
+                                </button>
+                            }
+
+                            if (currentCulture.Equals("en-US"))
+                            {
+                                <button class="btn js-dropdown-btn checkbox-dropdown-btn">
+                                    <img src="./assets/images/state.svg" alt="">
+                                    <span class="icon icon-dropdown"></span>
+                                </button>
+                            }
+
+                            if (currentCulture.Equals("hu"))
+                            {
+                                <button class="btn js-dropdown-btn checkbox-dropdown-btn">
+                                    <img src="./assets/images/state.svg" alt="">
+                                    <span class="icon icon-dropdown"></span>
+                                </button>
+                            }
                         }
-                    }
-                </div>
+                        <ul class="js-dropdown-list checkbox-dropdown-list">
+                            @foreach(var item in homePage.NavigationFlags)
+                            {
+                                var countryItem = (CountryDropdownItem)item.Content;
+
+                                <li data-country-key="@countryItem.CountryKey">
+                                    <img src="@countryItem.CountryFlag.Url()" alt="@countryItem.CountryFlag.Name">
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
                 <button type="button" class="mobile-menu">
                     <div><span class="sr-only">Mobile menu button</span></div>
                 </button>
