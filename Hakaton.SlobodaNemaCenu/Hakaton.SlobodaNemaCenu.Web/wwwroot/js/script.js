@@ -36,17 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst dropdown = {\r\n  init: function () {\r\n    this.filterDropdown();\r\n  },\r\n\r\n  filterDropdown: function () {\r\n    let dropdown = document.querySelectorAll('.js-dropdown-btn');\r\n    dropdown.forEach((button) => {\r\n      button.addEventListener('click', function (e) {\r\n        e.target.parentNode.classList.toggle('is-active');\r\n      });\r\n    });\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdown);\r\n\n\n//# sourceURL=webpack://vega-it-internship-starter/./src/js/dropdown.js?");
-
-/***/ }),
-
-/***/ "./src/js/header.js":
-/*!**************************!*\
-  !*** ./src/js/header.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst header = {\r\n  init: function () {\r\n    this.mobileMenu();\r\n  },\r\n\r\n  mobileMenu: function () {\r\n    document\r\n      .querySelector('.mobile-menu')\r\n      .addEventListener('click', function (event) {\r\n        event.preventDefault();\r\n        var target = document.querySelector('.header__container');\r\n        var body = document.querySelector('body');\r\n        if (target.classList.contains('active')) {\r\n          target.classList.remove('active');\r\n          body.classList.remove('scroll-disabled');\r\n        } else {\r\n          target.classList.add('active');\r\n          body.classList.add('scroll-disabled');\r\n        }\r\n      });\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (header);\r\n\n\n//# sourceURL=webpack://vega-it-internship-starter/./src/js/header.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst dropdown = {\r\n  init: function () {\r\n    this.filterDropdown();\r\n  },\r\n\r\n  filterDropdown: function () {\r\n    document\r\n      .querySelector('.checkbox-dropdown-btn')\r\n      .addEventListener('click', function (event) {\r\n        event.preventDefault();\r\n        var target = document.querySelector('.checkbox-dropdown-list');\r\n        if (target.classList.contains('is-active')) {\r\n          target.classList.remove('is-active');\r\n        } else {\r\n          target.classList.add('is-active');\r\n        }\r\n      });\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dropdown);\r\n\n\n//# sourceURL=webpack://vega-it-internship-starter/./src/js/dropdown.js?");
 
 /***/ }),
 
@@ -56,17 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ \"./src/js/slider.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/js/header.js\");\n/* harmony import */ var _background_text__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./background-text */ \"./src/js/background-text.js\");\n/* harmony import */ var _dropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dropdown */ \"./src/js/dropdown.js\");\n\r\n_slider__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init();\r\n\r\n\r\n_header__WEBPACK_IMPORTED_MODULE_1__[\"default\"].init();\r\n\r\n\r\n_background_text__WEBPACK_IMPORTED_MODULE_2__[\"default\"].init();\r\n\r\n\r\n_dropdown__WEBPACK_IMPORTED_MODULE_3__[\"default\"].init();\r\n\n\n//# sourceURL=webpack://vega-it-internship-starter/./src/js/script.js?");
-
-/***/ }),
-
-/***/ "./src/js/slider.js":
-/*!**************************!*\
-  !*** ./src/js/slider.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.mjs\");\n\r\nconst slider = {\r\n  init: function () {\r\n    this.slider();\r\n    window.addEventListener('resize', slider);\r\n  },\r\n\r\n  slider: function () {\r\n    var init = false;\r\n    var swiper;\r\n    if (window.innerWidth <= 768) {\r\n      if (!init) {\r\n        init = true;\r\n        swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.js-swiper', {\r\n          direction: 'horizontal',\r\n          slidesPerView: 1,\r\n          centeredSlides: true,\r\n          spaceBetween: 10\r\n        });\r\n      }\r\n    } else if (init) {\r\n      swiper.destroy();\r\n      init = false;\r\n    }\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);\r\n\n\n//# sourceURL=webpack://vega-it-internship-starter/./src/js/slider.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.mjs\");\n/* harmony import */ var _background_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./background-text */ \"./src/js/background-text.js\");\n/* harmony import */ var _dropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dropdown */ \"./src/js/dropdown.js\");\n//slider related news\r\n\r\nvar init = false;\r\nvar swiper;\r\nfunction swiperCard() {\r\n  if (window.innerWidth <= 768) {\r\n    if (!init) {\r\n      init = true;\r\n      swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.js-swiper', {\r\n        direction: 'horizontal',\r\n        slidesPerView: 1,\r\n        centeredSlides: true,\r\n        spaceBetween: 10\r\n      });\r\n    }\r\n  } else if (init) {\r\n    swiper.destroy();\r\n    init = false;\r\n  }\r\n}\r\nswiperCard();\r\nwindow.addEventListener('resize', swiperCard);\r\n// scroll text\r\n\r\n_background_text__WEBPACK_IMPORTED_MODULE_1__[\"default\"].init();\r\n\r\n\r\n_dropdown__WEBPACK_IMPORTED_MODULE_2__[\"default\"].init();\r\n\n\n//# sourceURL=webpack://vega-it-internship-starter/./src/js/script.js?");
 
 /***/ }),
 
