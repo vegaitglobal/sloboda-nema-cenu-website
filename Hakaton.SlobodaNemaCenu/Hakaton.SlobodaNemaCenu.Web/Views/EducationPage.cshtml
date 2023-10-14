@@ -1,0 +1,238 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.EducationPage>
+@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+  <main class="main">
+      <section class="banner small">
+        <div class="wrap">
+          <div class="banner-wrap">
+            <div class="banner-text">
+              <h1 class="h1 banner-title">Education</h1>
+              <p class="text">
+                Udruženje „Sloboda nema cenu” je dobrovoljno, nevladino,
+                neprofitno udruženje, osnovano na neodređeno vreme radi
+                ostvarivanja i unapređivanja zajedničkih i opštih ciljeva i
+                interesa u borbi protiv trgovine ljudima i svih drugih oblika
+                nasilja nad ženama i ciljeva u oblasti zaštite ljudskih prava
+                kroz edukaciju, prevenciju, kulturu i umetnost.
+              </p>
+            </div>
+            <div class="banner-img">
+              <img src="./assets/images/bird.png" alt="banner image" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="education-filters">
+        <div class="wrap">
+          <div class="checkbox-dropdown">
+            <button class="btn checkbox-dropdown-btn js-dropdown-btn">
+              Svi <span class="icon icon-dropdown"></span>
+            </button>
+            <ul class="checkbox-dropdown-list js-dropdown-list">
+              <li>
+                <label>
+                  <input type="checkbox" value="Svi" name="Svi" />
+                  <span class="checkmark"></span>Svi</label
+                >
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="mediji" name="mediji" /><span
+                    class="checkmark"
+                  ></span
+                  >Mediji</label
+                >
+              </li>
+              <li>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="profesionalci"
+                    name="profesionalci"
+                  /><span class="checkmark"></span>Profesionalci</label
+                >
+              </li>
+              <li>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Gradjani"
+                    name="Gradjani"
+                  /><span class="checkmark"></span>Gradjani</label
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="education-cards">
+        <div class="wrap">
+          <div class="education-cards__wrap">
+            <div class="education-card profesional">
+              <div class="education-card-top">
+                <img src="./assets/images/education-img.png" alt="" />
+                <div class="image-box__comment">
+                  <span>profesionalci</span>
+                  <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-card-content">
+                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
+                <div class="education-icons">
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-download"
+                      ><span class="sr-only">Download</span></span
+                    ></a
+                  >
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-share"
+                      ><span class="sr-only">Share</span></span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="education-card profesional">
+              <div class="education-card-top">
+                <img src="./assets/images/education-img.png" alt="" />
+                <div class="image-box__comment">
+                  <span>profesionalci</span>
+                  <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-card-content">
+                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
+                <div class="education-icons">
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-download"
+                      ><span class="sr-only">Download</span></span
+                    ></a
+                  >
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-share"
+                      ><span class="sr-only">Share</span></span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="education-card profesional">
+              <div class="education-card-top">
+                <img src="./assets/images/education-img.png" alt="" />
+                <div class="image-box__comment">
+                  <span>profesionalci</span>
+                  <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-card-content">
+                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
+                <div class="education-icons">
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-download"
+                      ><span class="sr-only">Download</span></span
+                    ></a
+                  >
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-share"
+                      ><span class="sr-only">Share</span></span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="education-card profesional">
+              <div class="education-card-top">
+                <img src="./assets/images/education-img.png" alt="" />
+                <div class="image-box__comment">
+                  <span>profesionalci</span>
+                  <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-card-content">
+                <p class="education-card__text">Lorem ipsum dolor sit amet</p>
+                <div class="education-icons">
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-download"
+                      ><span class="sr-only">Download</span></span
+                    ></a
+                  >
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-share"
+                      ><span class="sr-only">Share</span></span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="education-card people">
+              <div class="education-card-top">
+                <img src="./assets/images/education-img.png" alt="" />
+                <div class="image-box__comment">
+                  <span>gradjani</span>
+                  <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-card-content">
+                <p class="education-card__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+                <div class="education-icons">
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-download"
+                      ><span class="sr-only">Download</span></span
+                    ></a
+                  >
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-share"
+                      ><span class="sr-only">Share</span></span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="education-card media">
+              <div class="education-card-top">
+                <img src="./assets/images/education-img.png" alt="" />
+                <div class="image-box__comment">
+                  <span>mediji</span>
+                  <div class="triangle-comment">
+                    <span class="sr-only">Triangle shape</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-card-content">
+                <p class="education-card__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </p>
+                <div class="education-icons">
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-download"
+                      ><span class="sr-only">Download</span></span
+                    ></a
+                  >
+                  <a href="" class="education-icon"
+                    ><span class="icon icon-share"
+                      ><span class="sr-only">Share</span></span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
