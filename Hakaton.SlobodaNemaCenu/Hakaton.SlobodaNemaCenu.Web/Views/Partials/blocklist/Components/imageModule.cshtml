@@ -8,9 +8,12 @@
     <div class="wrap">
         <div class="image-box__wrap">
             <div class="image-box__img">
+                @if(item.ClickableLink != null)
+                {
                 <a href="@item.ClickableLink.Url" class="image-box__link">
                     <img src="@item.Image.Url()" alt="Image exemple" />
                 </a>
+                }
             </div>
 
             <div class="image-box__comment">

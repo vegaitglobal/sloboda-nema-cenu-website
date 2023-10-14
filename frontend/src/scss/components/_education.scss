@@ -98,7 +98,7 @@
   }
 }
 .education-cards__wrap {
-  margin-bottom: 44px;
+  margin: 0 -9px 44px;
   @include media-breakpoint-up(md) {
     display: flex;
     flex-wrap: wrap;
@@ -193,4 +193,47 @@
       opacity: 0.7;
     }
   }
+
 }
+.position{
+  position: absolute;
+  bottom:2rem;
+  right: 2rem;
+}
+
+.education-fpmodule__wrap {
+  margin-bottom: 44px;
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden
+}
+
+.education-text-over-image {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  
+}
+
+.education-subtitle {
+  font-size: 24px;
+  margin-bottom: 0.7rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  font-weight: bold;
+}
+
+.education-link{
+  margin-top:0.6rem;
+  font-weight: bold;
+}
+
+
