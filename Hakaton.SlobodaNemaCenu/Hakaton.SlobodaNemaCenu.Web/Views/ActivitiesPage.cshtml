@@ -3,7 +3,7 @@
 @using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
 @{
     Layout = "_Layout.cshtml";
-    var children = Model.Children<ContentModels.ActivityPage>().OrderBy(d => d.Date);
+    var children = Model.Children<ContentModels.ActivityPage>().OrderByDescending(d => d.Date);
 }
 
 
@@ -41,7 +41,7 @@
                             </div>
                             <div class="related-news__card-content">
                                 <h4 class="h4 related-news__card-title">
-                                   @item.PreviewTitle
+                                   <span class="related-news__title-text">@item.PreviewTitle</span>
                                 </h4>
                                 <p class="text-small">
                                     @item.PreviewText

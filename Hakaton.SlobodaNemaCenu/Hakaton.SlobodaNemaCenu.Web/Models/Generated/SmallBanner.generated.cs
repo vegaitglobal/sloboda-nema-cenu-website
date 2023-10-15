@@ -58,30 +58,6 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BannerImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "bannerImage");
 
 		///<summary>
-		/// BoxComment
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("boxComment")]
-		public virtual string BoxComment => this.Value<string>(_publishedValueFallback, "boxComment");
-
-		///<summary>
-		/// Comment
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("comment")]
-		public virtual string Comment => this.Value<string>(_publishedValueFallback, "comment");
-
-		///<summary>
-		/// Image Example
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("imageExample")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageExample => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageExample");
-
-		///<summary>
 		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
@@ -96,13 +72,5 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
 		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
-
-		///<summary>
-		/// Triangle Comment
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("triangleComment")]
-		public virtual string TriangleComment => this.Value<string>(_publishedValueFallback, "triangleComment");
 	}
 }

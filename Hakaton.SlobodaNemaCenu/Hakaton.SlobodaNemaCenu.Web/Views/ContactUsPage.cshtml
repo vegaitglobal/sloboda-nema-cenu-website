@@ -1,0 +1,101 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactUsPage>
+@using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+<main class="main">
+    <section class="contact ">
+        <div class="wrap">
+          <div class="contact-wrap">
+            <div class="contact-text">
+                @if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+                {
+                    <p class="contact-subtitle">@Model.Subtitle</p>
+
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.Title))
+                {
+                    <h1 class="h1 contact-title">@Model.Title</h1>
+
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model.Description))
+                {
+                    <p class="text">
+                        @Model.Description
+                    </p>
+                }
+               <br>
+                @if (!string.IsNullOrWhiteSpace(Model.EmailAddressTitle))
+                {
+                    <p class="contact-text">@Model.EmailAddressTitle</p>
+
+                }
+                
+                <br>
+                @if (Model.EmailAddress != null)
+                {
+                    <a href="mailto: @Model.EmailAddress.Url" class="contact_link" target="@Model.EmailAddress.Target">@Model.EmailAddress.Name</a>
+
+                }
+                <br>
+
+              <br><br>
+                @if (!string.IsNullOrWhiteSpace(Model.FollowUsTitle))
+                {
+                    <p class="contact-text">@Model.FollowUsTitle</p>
+
+                }
+              <br>
+
+                @if(Model.SocialLinks != null && Model.SocialLinks.Any())
+                {
+                        <div class="icons">
+                            @foreach(var linkItem in Model.SocialLinks)
+                            {
+                                var socLink = (ContentModels.SocialMediaLink)linkItem.Content;
+
+                                <a href="@socLink.SocialLink.Url" class="icon-link" target="@socLink.SocialLink.Target">
+                                    @if(!string.IsNullOrWhiteSpace(socLink.SocialLinkType) && socLink.SocialLinkType.Equals("Facebook"))
+                                    {
+                                        <span class="icon icon-facebook">
+                                            <span class="sr-only">Facebook link</span>
+                                        </span>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(socLink.SocialLinkType) && socLink.SocialLinkType.Equals("Instagram"))
+                                    {
+                                        <span class="icon icon-instagram">
+                                            <span class="sr-only">Instagram link</span>
+                                        </span>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(socLink.SocialLinkType) && socLink.SocialLinkType.Equals("LinkedIn"))
+                                    {
+                                        <span class="icon icon-linkedin">
+                                            <span class="sr-only">LinkedIn link</span>
+                                        </span>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(socLink.SocialLinkType) && socLink.SocialLinkType.Equals("Twitter"))
+                                    {
+                                        <span class="icon icon-twitter">
+                                            <span class="sr-only">Twitter link</span>
+                                        </span>
+                                    }
+                                    
+                                </a>
+                            }
+                        </div>
+                    }              
+            </div>
+            @if(Model.ImageLogo != null)
+            {
+                <div class="contact-img">
+                    <img src="@Model.ImageLogo.Url()" alt="@Model.ImageLogo.Name" style="width:100%; height:100%; position:relative; top:-47px;">
+                </div>
+            }
+            
+          </div>
+        </div>
+      </section>
+  </main>

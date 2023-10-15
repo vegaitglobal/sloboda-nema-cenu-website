@@ -20,7 +20,7 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 {
 	/// <summary>Contact Us Page</summary>
 	[PublishedModel("contactUsPage")]
-	public partial class ContactUsPage : PublishedContentModel
+	public partial class ContactUsPage : PublishedContentModel, IPageBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -58,12 +58,44 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		public virtual string Description => this.Value<string>(_publishedValueFallback, "description");
 
 		///<summary>
+		/// Email Address
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("emailAddress")]
+		public virtual global::Umbraco.Cms.Core.Models.Link EmailAddress => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "emailAddress");
+
+		///<summary>
 		/// Email Address Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("emailAddressTitle")]
 		public virtual string EmailAddressTitle => this.Value<string>(_publishedValueFallback, "emailAddressTitle");
+
+		///<summary>
+		/// Follow Us Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("followUsTitle")]
+		public virtual string FollowUsTitle => this.Value<string>(_publishedValueFallback, "followUsTitle");
+
+		///<summary>
+		/// Image Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("imageLogo")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageLogo => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageLogo");
+
+		///<summary>
+		/// Social Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("socialLinks")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel SocialLinks => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "socialLinks");
 
 		///<summary>
 		/// Subtitle
@@ -74,11 +106,19 @@ namespace Hakaton.SlobodaNemaCenu.Web.Models.Generated
 		public virtual string Subtitle => this.Value<string>(_publishedValueFallback, "subtitle");
 
 		///<summary>
+		/// SEO Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sEOTitle")]
+		public virtual string SEotitle => global::Hakaton.SlobodaNemaCenu.Web.Models.Generated.PageBase.GetSEotitle(this, _publishedValueFallback);
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
-		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+		public virtual string Title => global::Hakaton.SlobodaNemaCenu.Web.Models.Generated.PageBase.GetTitle(this, _publishedValueFallback);
 	}
 }
