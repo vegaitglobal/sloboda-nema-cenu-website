@@ -37,15 +37,15 @@
                             if (currentCulture.Equals("sr"))
                             {
                                 <button class="btn js-dropdown-btn checkbox-dropdown-btn">
-                                    <img src="./assets/images/state.svg" alt="CountryFlag">
+                                    <img src="/assets/images/state.svg" alt="CountryFlag">
                                     <span class="icon icon-dropdown"></span>
                                 </button>
                             }
 
-                            if (currentCulture.Equals("en-US"))
+                            if (currentCulture.Equals("en"))
                             {
                                 <button class="btn js-dropdown-btn checkbox-dropdown-btn">
-                                    <img src="./assets/images/great-britain.png" alt="CountryFlag">
+                                    <img src="/assets/images/great-britain.png" alt="CountryFlag">
                                     <span class="icon icon-dropdown"></span>
                                 </button>
                             }
@@ -53,7 +53,7 @@
                             if (currentCulture.Equals("hu"))
                             {
                                 <button class="btn js-dropdown-btn checkbox-dropdown-btn">
-                                    <img src="./assets/images/hungary.png" alt="CountryFlag">
+                                    <img src="/assets/images/hungary.png" alt="CountryFlag">
                                     <span class="icon icon-dropdown"></span>
                                 </button>
                             }
@@ -64,7 +64,7 @@
                                 var countryItem = (CountryDropdownItem)item.Content;
 
                                 <li data-country-key="@countryItem.CountryKey">
-                                    <img src="@countryItem.CountryFlag?.Url()" alt="@countryItem.CountryFlag?.Name">
+                                    <a href="/@countryItem.CountryKey"><img src="@countryItem.CountryFlag?.Url()" alt="@countryItem.CountryFlag?.Name"></a>
                                 </li>
                             }
                         </ul>

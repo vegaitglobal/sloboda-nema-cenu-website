@@ -144,7 +144,7 @@ table {
 @font-face {
   font-family: "svgicons";
   font-display: block;
-  src: url("../assets/fonts/svgicons.woff2?ea7b42ea431ad2475cebe51390efb192") format("woff2"), url("../assets/fonts/svgicons.woff?ea7b42ea431ad2475cebe51390efb192") format("woff"), url("../assets/fonts/svgicons.svg?ea7b42ea431ad2475cebe51390efb192#svgicons") format("svg");
+  src: url("../assets/fonts/svgicons.woff2?6e6881eb02c50da95f6327f13b3543fc") format("woff2"), url("../assets/fonts/svgicons.woff?6e6881eb02c50da95f6327f13b3543fc") format("woff"), url("../assets/fonts/svgicons.svg?6e6881eb02c50da95f6327f13b3543fc#svgicons") format("svg");
 }
 .icon {
   line-height: 1;
@@ -1415,6 +1415,7 @@ button.swiper-pagination-bullet {
 
 .image-text {
   margin: 115px 0 64px;
+  overflow: hidden;
 }
 @media only screen and (max-width: 1023.98px) {
   .image-text {
@@ -1612,6 +1613,9 @@ button.swiper-pagination-bullet {
     flex: 1 1 30%;
     min-width: 285px;
     margin: 0 9px 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1640,6 +1644,7 @@ button.swiper-pagination-bullet {
   position: relative;
   border-radius: 40px 40px 0;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .rated-news__card-top img {
   position: absolute;
@@ -1665,6 +1670,10 @@ button.swiper-pagination-bullet {
 
 .related-news__card-content {
   padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .related-news__card-content .h4 {
   margin-bottom: 14px;
@@ -1672,9 +1681,12 @@ button.swiper-pagination-bullet {
   border-bottom: 1px solid transparent;
   transition: 0.4s ease-out;
 }
+.related-news__card-content .text-small {
+  margin-bottom: 14px;
+}
 
 .related-news__link {
-  margin-top: 14px;
+  margin-top: auto;
 }
 .related-news__link a {
   display: flex;
@@ -1990,7 +2002,7 @@ button.swiper-pagination-bullet {
   height: 0;
   width: 0;
 }
-.checkbox-dropdown-list input:checked ~ .checkmark:after {
+.checkbox-dropdown-list input:checked ~ .checkmark::after {
   display: block;
 }
 .checkbox-dropdown-list input:checked ~ .checkmark {
@@ -2028,7 +2040,7 @@ button.swiper-pagination-bullet {
 }
 
 .education-cards__wrap {
-  margin-bottom: 44px;
+  margin: 0 -9px 44px;
 }
 @media only screen and (min-width: 768px) {
   .education-cards__wrap {
@@ -2060,7 +2072,7 @@ button.swiper-pagination-bullet {
   background-color: #1c7da3;
 }
 .education-card.media .triangle-comment {
-  border-color: #1c7da3 transparent transparent transparent;
+  border-color: #1c7da3 transparent transparent;
 }
 .education-card.media .education-card-content {
   background-color: #1c7da3;
@@ -2096,7 +2108,7 @@ button.swiper-pagination-bullet {
 
 .education-card-content {
   padding: 16px;
-  border-radius: 0 0 20px 0;
+  border-radius: 0 0 20px;
   background-color: #49b4d6;
   display: flex;
   flex-direction: column;
@@ -2130,6 +2142,100 @@ button.swiper-pagination-bullet {
   .education-icons .education-icon:hover {
     opacity: 0.7;
   }
+}
+
+.position {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.education-fpmodule__wrap {
+  margin-bottom: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .education-fpmodule__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.education-text-over-image {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.education-subtitle {
+  font-size: 24px;
+  margin-bottom: 0.7rem;
+  font-weight: bold;
+}
+@media only screen and (max-width: 767.98px) {
+  .education-subtitle {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+}
+
+.education-link {
+  margin-top: 0.6rem;
+  font-weight: bold;
+}
+
+.contact-text {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  width: 50%;
+}
+
+.space {
+  margin-bottom: 1.5rem;
+}
+
+.contact {
+  margin: 100px 0 60px;
+}
+.contact.small .banner-img {
+  flex: 1 0 240px;
+  max-width: 240px;
+}
+
+.contact-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-img {
+  width: 50%;
+  padding-left: 42px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contact-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  color: #49b4d6;
+  margin-bottom: 14px;
+}
+
+.contact_link {
+  font-size: 20px;
+  line-height: normal;
+  color: #49b4d6;
+  font-weight: bold;
+}
+
+.link-container {
+  margin-bottom: 1.8rem;
 }
 
 /* --------------------------------------------------------------

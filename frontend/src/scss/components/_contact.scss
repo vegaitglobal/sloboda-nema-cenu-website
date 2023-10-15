@@ -4,58 +4,49 @@
 @use '../abstracts' as *;
 
 .contact-text{
-    font-size: 18px;
-    line-height: 21px;
-    font-weight: 400;
-    width:50%;
-    
-  }
-  .space {
-    margin-bottom: 1.5rem;
-  }
-  .contact {
-    margin: 100px 0 60px;
-    &.small {
-      .banner-img {
-        flex: 1 0 240px;
-        max-width: 240px;
-      }
-    }
-  }
-  .contact-wrap {
-   display: flex;
-   justify-content: space-between;
-  }
-  .contact-img {
-    width:50%;
-    padding-left:42px;
-    object-fit: cover; 
-   }
+	font-size: 18px;
+	line-height: 21px;
+	font-weight: 400;
+	width:50%;
+}
+.space {
+	margin-bottom: 1.5rem;
+}
+.contact {
+	margin: 100px 0 60px;
+	&.small {
+		.banner-img {
+			flex: 1 0 240px;
+			max-width: 240px;
+		}
+	}
+}
+.contact-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+.contact-img {
+	width:50%;
+	padding-left:42px;
+	object-fit: cover;
+}
 
 
-  .contact-subtitle {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: normal;
-    color: $light-blue;
-    margin-bottom: 14px;
-  }
- 
-  
-  .contact_link{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: normal;
-    color: $light-blue;
-   
-    font-weight: bold;
-  }
+.contact-subtitle {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: normal;
+	color: $light-blue;
+	margin-bottom: 14px;
+}
 
-  .link-container{
-    margin-bottom: 1.8rem;
-  }
- 
+.contact_link{
+	font-size: 20px;
+	line-height: normal;
+	color: $light-blue;
+	font-weight: bold;
+}
 
-  
-  
-  
+.link-container{
+	margin-bottom: 1.8rem;
+}
