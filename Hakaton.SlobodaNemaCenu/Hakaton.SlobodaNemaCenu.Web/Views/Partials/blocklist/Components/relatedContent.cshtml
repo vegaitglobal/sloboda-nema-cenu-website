@@ -5,7 +5,7 @@
     var items = item.ManuallySelectedArticles?.Any() ?? false ?
     item.ManuallySelectedArticles.Cast<ContentModels.ActivityPage>() :
     item.AutomaticallySelectedArticles.First().Children<ContentModels.ActivityPage>().OrderBy(a => a.Date).Take(2);
-    
+
 }
 
 <section class="related-news">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="related-news__card-content">
                         <h4 class="h4 related-news__card-title">
-                            @content.PreviewTitle
+                            <span class="related-news__title-text">@content.PreviewTitle</span>
                         </h4>
                         <p class="text-small">
                             @content.PreviewText
