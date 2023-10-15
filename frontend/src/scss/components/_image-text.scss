@@ -5,7 +5,6 @@
 
 .image-text {
   margin: 115px 0 64px;
-  overflow: hidden;
   @include media-breakpoint-down(md) {
     margin: 90px 0 64px;
   }

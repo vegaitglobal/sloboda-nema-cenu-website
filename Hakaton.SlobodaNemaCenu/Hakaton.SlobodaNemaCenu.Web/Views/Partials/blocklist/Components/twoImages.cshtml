@@ -3,10 +3,11 @@
 @{
     var item = Model.Content as ContentModels.TwoImages;
 }
-
-<div class="wrap">
-    <div class="two-images__wrap">
-        <img src="@item.FirstImage?.GetCropUrl()" alt="" />
-        <img src="@item.SecondImage?.GetCropUrl()" alt="" />
+<section class="two-images">
+    <div class="wrap">
+        <div class="two-images__wrap">
+            <img src="@item.FirstImage?.GetCropUrl()" alt="" />
+            <img src="@item.SecondImage?.GetCropUrl()" alt="" />
+        </div>
     </div>
-</div>
+</section>
