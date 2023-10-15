@@ -4,7 +4,7 @@
     var item = Model.Content as ContentModels.RelatedContent;
     var items = item.ManuallySelectedArticles?.Any() ?? false ?
     item.ManuallySelectedArticles.Cast<ContentModels.ActivityPage>() :
-    item.AutomaticallySelectedArticles.First().Children<ContentModels.ActivityPage>().OrderBy(a => a.Date).Take(2);
+    item.AutomaticallySelectedArticles.First().Children<ContentModels.ActivityPage>().OrderByDescending(a => a.Date).Take(2);
 
 }
 

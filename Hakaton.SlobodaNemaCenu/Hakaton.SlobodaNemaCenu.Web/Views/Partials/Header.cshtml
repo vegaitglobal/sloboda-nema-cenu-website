@@ -34,37 +34,32 @@
                         @{
                             var currentCulture = Model.GetCultureFromDomains();
 
-                            if (currentCulture.Equals("sr"))
+                            var currrentCultureFlag = homePage.NavigationFlags.FirstOrDefault(w => ((CountryDropdownItem)w.Content).CountryKey.Equals(currentCulture));
+
+                            if (currrentCultureFlag is null)
                             {
-                                <button class="btn js-dropdown-btn checkbox-dropdown-btn">
-                                    <img src="/assets/images/state.svg" alt="CountryFlag">
-                                    <span class="icon icon-dropdown"></span>
-                                </button>
+                                currrentCultureFlag = homePage.NavigationFlags.FirstOrDefault(w => ((CountryDropdownItem)w.Content).CountryKey.Equals("sr"));
                             }
 
-                            if (currentCulture.Equals("en"))
-                            {
-                                <button class="btn js-dropdown-btn checkbox-dropdown-btn">
-                                    <img src="/assets/images/great-britain.png" alt="CountryFlag">
-                                    <span class="icon icon-dropdown"></span>
-                                </button>
-                            }
+                            var casted = (CountryDropdownItem)currrentCultureFlag.Content;
 
-                            if (currentCulture.Equals("hu"))
-                            {
-                                <button class="btn js-dropdown-btn checkbox-dropdown-btn">
-                                    <img src="/assets/images/hungary.png" alt="CountryFlag">
-                                    <span class="icon icon-dropdown"></span>
-                                </button>
-                            }
+                            <button class="btn js-dropdown-btn checkbox-dropdown-btn">
+                                <img src="@casted.CountryFlag?.Url()" alt="@currentCulture">
+                                <span class="icon icon-dropdown"></span>
+                            </button>
                         }
                         <ul class="js-dropdown-list checkbox-dropdown-list">
                             @foreach(var item in homePage.NavigationFlags)
                             {
                                 var countryItem = (CountryDropdownItem)item.Content;
+                                var countryKey = countryItem.CountryKey;
+                                @if(countryKey.Equals("sr"))
+                                {
+                                    countryKey = string.Empty;
+                                }
 
                                 <li data-country-key="@countryItem.CountryKey">
-                                    <a href="/@countryItem.CountryKey"><img src="@countryItem.CountryFlag?.Url()" alt="@countryItem.CountryFlag?.Name"></a>
+                                    <a href="/@countryKey"><img src="@countryItem.CountryFlag?.Url()" alt="@countryItem.CountryFlag?.Name"></a>
                                 </li>
                             }
                         </ul>
