@@ -16,17 +16,19 @@
                 }
                 else
                 {
-                    <img src="@item.Image.Url()" alt="Image exemple" />
+                    <img src="@item.Image?.Url()" alt="Image exemple" />
                 }
             </div>
-
-            <div class="image-box__comment">
-                <span class="grey">@item.Title</span>
-                <span>@item.Subtitle</span>
-                <div class="triangle-comment">
-                    <span class="sr-only">Triangle shape</span>
+            @if(!string.IsNullOrEmpty(item.Title) || !string.IsNullOrEmpty(item.Subtitle)){
+                <div class="image-box__comment">
+                    <span class="grey">@item.Title</span>
+                    <span>@item.Subtitle</span>
+                    <div class="triangle-comment">
+                        <span class="sr-only">Triangle shape</span>
+                    </div>
                 </div>
-            </div>
+            }
+          
         </div>
     </div>
 </section>
