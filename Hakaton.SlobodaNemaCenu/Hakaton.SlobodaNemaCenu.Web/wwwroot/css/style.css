@@ -144,7 +144,7 @@ table {
 @font-face {
   font-family: "svgicons";
   font-display: block;
-  src: url("../assets/fonts/svgicons.woff2?b7efca4a925e45ac2632dfb7aec2f309") format("woff2"), url("../assets/fonts/svgicons.woff?b7efca4a925e45ac2632dfb7aec2f309") format("woff"), url("../assets/fonts/svgicons.svg?b7efca4a925e45ac2632dfb7aec2f309#svgicons") format("svg");
+  src: url("../assets/fonts/svgicons.woff2?6e6881eb02c50da95f6327f13b3543fc") format("woff2"), url("../assets/fonts/svgicons.woff?6e6881eb02c50da95f6327f13b3543fc") format("woff"), url("../assets/fonts/svgicons.svg?6e6881eb02c50da95f6327f13b3543fc#svgicons") format("svg");
 }
 .icon {
   line-height: 1;
@@ -1415,6 +1415,7 @@ button.swiper-pagination-bullet {
 
 .image-text {
   margin: 115px 0 64px;
+  overflow: hidden;
 }
 @media only screen and (max-width: 1023.98px) {
   .image-text {
@@ -1681,10 +1682,6 @@ button.swiper-pagination-bullet {
   transition: 0.4s ease-out;
 }
 .related-news__card-content .text-small {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
   margin-bottom: 14px;
 }
 
