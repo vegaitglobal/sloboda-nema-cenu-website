@@ -16,40 +16,32 @@
             @item.BodyCopy
             </p>
         </div>
-        <div class="image-text__image">
-                @if(item.StarColorPicker.Equals("Dark blue"))
+        @if (item.Image != null)
+        {
+            <div class="image-text__image">
+                @if (item.StarColorPicker.Equals("Dark blue"))
                 {
                     <img
                     src="./assets/images/shape-2.svg"
                     alt="Svg shape"
                     class="image-text__image-shape"
-                    />
-                }
+                        />
+                 }
                 else
                 {
-                    <img
-                    src="./assets/images/star-shape.svg"
-                    alt="Svg shape"
-                    class="image-text__image-shape"
-                    />
-                }
+                <img
+                src="./assets/images/star-shape.svg"
+                alt="Svg shape"
+                class="image-text__image-shape"
+                />
+                }   
                 
-                @if (item.Image != null)
-                {
-                    <img               
-                    src="@item.Image?.Url()"
-                    class="image-text__image-main"
-                    />
-                }
-                else
-                {
-                    <img               
-                    alt="Image alt text"
-                    class="image-text__image-main"
-                    />
-                }
-
-        </div>
+            <img               
+            src="@item.Image?.Url()"
+            class="image-text__image-main"
+            />
+             </div>
+        }
         </div>
     </div>
 </section>
