@@ -6,6 +6,9 @@
 .background-text {
   overflow: hidden;
   margin-bottom: 64px;
+  position: relative;
+
+ 
 }
 .background-text__content {
   font-size: 217px;
@@ -14,11 +17,13 @@
   display: block;
   animation: scroll 15s linear infinite;
   color: transparent;
+  
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: rgba($white, 0.4);
   filter: drop-shadow(0 0 17px rgba($white, 0.4));
   font-family: sans-serif;
   mix-blend-mode: soft-light;
+  position: relative;
   @include media-breakpoint-down(sm) {
     font-size: 60px;
     -webkit-text-stroke-width: 1px;
@@ -34,4 +39,15 @@
   100% {
     margin-left: -50%;
   }
+}
+
+.additional-text {
+  position: absolute;
+  top: 4.5rem;
+  // left: 50%;
+  justify-self: center;
+  font-size: 2vw;
+  font-weight: 700;
+
+  z-index: 1; /* Postavite z-index na vrednost veću od 0 kako biste postavili tekst iznad background-text__content */
 }

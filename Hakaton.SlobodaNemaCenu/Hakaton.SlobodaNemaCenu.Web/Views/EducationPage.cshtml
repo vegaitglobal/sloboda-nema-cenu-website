@@ -18,7 +18,9 @@
                 .ToList();
     }
     var items = Model.EducationItems.Select(e => e.Content).Cast<ContentModels.EducationItem>()
-                    .Where(ei => !categoryIds.Any() || categoryIds.Contains(ei.Category.Id));
+                    .Where(ei => !categoryIds.Any() || categoryIds.Contains(ei.Category.Id))
+                    .OrderByDescending(item => item.Category.Id)
+                    .OrderByDescending(n => n.Title);
     var checkedCategories = categories.Where(c => categoryIds.Contains(c.Id));
 }
 

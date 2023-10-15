@@ -5,7 +5,7 @@
     var items = item.Items?.Any() ?? false ?
     item.Items.Cast<ContentModels.ActivityPage>() :
     Umbraco.ContentAtRoot().First().FirstChild<ContentModels.ActivitiesPage>()
-    .Children<ContentModels.ActivityPage>().OrderBy(a => a.Date).Take(3)
+    .Children<ContentModels.ActivityPage>().OrderByDescending(a => a.Date).Take(3)
     ;
 }
 

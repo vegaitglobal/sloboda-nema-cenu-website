@@ -3,7 +3,7 @@
 @using ContentModels = Hakaton.SlobodaNemaCenu.Web.Models.Generated;
 @{
     Layout = "_Layout.cshtml";
-    var children = Model.Children<ContentModels.ActivityPage>().OrderBy(d => d.Date);
+    var children = Model.Children<ContentModels.ActivityPage>().OrderByDescending(d => d.Date);
 }
 
 

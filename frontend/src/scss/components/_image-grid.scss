@@ -8,11 +8,19 @@
   .background-text {
     overflow: initial;
     margin-bottom: 0;
+    display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  justify-content: center;
   }
   .background-text__content {
     font-size: 185px;
     text-align: center;
     animation: none;
+    overflow: hidden;
+  
+    letter-spacing:0.14rem;
     -webkit-text-stroke-color: #084a7c;
     mix-blend-mode: screen;
     white-space: normal;
@@ -21,7 +29,11 @@
       font-size: 14vw;
     }
   }
+ 
 }
+
+
+
 .image-grid__content {
   text-align: center;
 }
