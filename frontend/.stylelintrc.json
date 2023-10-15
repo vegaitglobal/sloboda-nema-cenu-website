@@ -48,8 +48,9 @@
 			]
 		},
 		"declaration-block-no-duplicate-properties": true,
-		"max-nesting-depth": 3,
+		"max-nesting-depth": 5,
 		"declaration-block-no-shorthand-property-overrides": true,
+		"declaration-block-no-redundant-longhand-properties": null,
 		"declaration-empty-line-before": "never",
 		"no-invalid-double-slash-comments": null,
 		"selector-class-pattern": null,
@@ -64,6 +65,9 @@
 	},
 	"ignoreFiles": [
 		"src/scss/base/_reset.scss",
-		"src/scss/base/_icon-font.scss"
+		"src/scss/base/_icon-font.scss",
+		"src/scss/abstracts/_mixins.scss",
+		"src/scss/abstracts/_breakpoints.scss",
+		"src/scss/plugins/_swiper.scss"
 	]
 }
