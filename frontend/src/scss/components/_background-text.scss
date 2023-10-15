@@ -6,6 +6,9 @@
 .background-text {
   overflow: hidden;
   margin-bottom: 64px;
+  position: relative;
+
+
 }
 .background-text__content {
   font-size: 217px;
@@ -19,6 +22,7 @@
   filter: drop-shadow(0 0 17px rgba($white, 0.4));
   font-family: sans-serif;
   mix-blend-mode: soft-light;
+  position: relative;
   @include media-breakpoint-down(sm) {
     font-size: 60px;
     -webkit-text-stroke-width: 1px;
@@ -34,4 +38,13 @@
   100% {
     margin-left: -50%;
   }
+}
+
+.additional-text {
+  position: absolute;
+  top: 4.5rem;
+  justify-self: center;
+  font-size: 2vw;
+  font-weight: 700;
+  z-index: 1;
 }

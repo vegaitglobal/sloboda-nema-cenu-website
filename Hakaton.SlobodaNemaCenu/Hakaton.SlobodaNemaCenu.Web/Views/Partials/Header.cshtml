@@ -20,9 +20,21 @@
                     <ul class="nav__list" role="menubar">
                         @foreach (var pageItem in homePage.NavigationPages)
                         {
-                            <li class="nav__item active" role="menuitem">
-                                <a class="nav__link" href="@pageItem.Url" rel="noopener noreferrer">@pageItem.Name</a>
-                            </li>
+                            var currentPageUrl = Umbraco.AssignedContentItem.Url();
+
+                            if (currentPageUrl.Equals(pageItem.Url))
+                            {
+                                <li class="nav__item active" role="menuitem">
+                                    <a class="nav__link" href="@pageItem.Url" rel="noopener noreferrer">@pageItem.Name</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav__item" role="menuitem">
+                                    <a class="nav__link" href="@pageItem.Url" target="@pageItem.Target" rel="noopener noreferrer">@pageItem.Name</a>
+                                </li>
+                            }
+
                         }
                     </ul>
                 </nav>
