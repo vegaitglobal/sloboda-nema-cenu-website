@@ -122,5 +122,11 @@
       color: rgba($white, 0.2);
       transition: $anim;
     }
+    &::before {
+      background-color: transparent;
+      content: '';
+      inset: 0;
+      position: absolute;
+    }
   }
 }
