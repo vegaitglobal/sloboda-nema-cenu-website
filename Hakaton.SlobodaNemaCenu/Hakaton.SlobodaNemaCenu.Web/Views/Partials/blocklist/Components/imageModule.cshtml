@@ -10,7 +10,7 @@
             <div class="image-box__img">
                 @if(item.ClickableLink != null)
                 {
-                <a href="@item.ClickableLink.Url" class="image-box__link">
+                    <a href="@item.ClickableLink.Url" class="image-box__link" target="@item.ClickableLink.Target">
                     <img src="@item.Image.Url()" alt="Image exemple" />
                     </a>
                 }
