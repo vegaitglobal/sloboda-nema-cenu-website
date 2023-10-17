@@ -5,8 +5,7 @@
     var items = item.Items?.Any() ?? false ?
     item.Items.Cast<ContentModels.ActivityPage>() :
     Umbraco.ContentAtRoot().First().FirstChild<ContentModels.ActivitiesPage>()
-    .Children<ContentModels.ActivityPage>().OrderByDescending(a => a.Date).Take(3)
-    ;
+    .Children<ContentModels.ActivityPage>().OrderByDescending(a => a.Date).Take(3);
 }
 
 <section class="related-news">
@@ -20,11 +19,25 @@
             <div class="swiper-wrapper">
 
                 @foreach(var activity in items){
+                    string dayStr = @activity.Date.Day.ToString();
+                    if (dayStr.Length == 1)
+                    {
+                        dayStr = "0" + dayStr;
+                    }
+
+                    string monthStr = @activity.Date.Month.ToString();
+                    if (monthStr.Length == 1)
+                    {
+                        monthStr = "0" + monthStr;
+                    }
+
+                    string yearStr = @activity.Date.Year.ToString();
+
                     <div class="swiper-slide related-news__card">
                         <div class="rated-news__card-top">
                             <img src="@activity.PreviewImage.GetCropUrl()" alt="Card img" />
                             <div class="related-news__tags">
-                                <span class="related-news__tag date">@activity.Date.ToString("dd/mm/yyyy")</span>
+                                <span class="related-news__tag date">@dayStr/@monthStr/@yearStr</span>
                                 <span class="related-news__tag place">@activity.Category</span>
                             </div>
                         </div>
