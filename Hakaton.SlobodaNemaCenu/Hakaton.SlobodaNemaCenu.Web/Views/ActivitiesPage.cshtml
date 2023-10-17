@@ -4,6 +4,8 @@
 @{
     Layout = "_Layout.cshtml";
     var children = Model.Children<ContentModels.ActivityPage>().OrderByDescending(d => d.Date);
+
+
 }
 
 
@@ -31,11 +33,26 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     @foreach (var item in children){
+
+                        string dayStr = item.Date.Day.ToString();
+                        if (dayStr.Length == 1)
+                        {
+                            dayStr = "0" + dayStr;
+                        }
+
+                        string monthStr = item.Date.Month.ToString();
+                        if (monthStr.Length == 1)
+                        {
+                            monthStr = "0" + monthStr;
+                        }
+
+                        string yearStr = item.Date.Year.ToString();
+
                         <div class="swiper-slide related-news__card">
                             <div class="rated-news__card-top">
                                 <img src="@item.PreviewImage?.GetCropUrl()" alt="Card img" />
                                 <div class="related-news__tags">
-                                    <span class="related-news__tag date">@item.Date.ToString("dd/MM/yyyy") </span>
+                                    <span class="related-news__tag date">@dayStr/@monthStr/@yearStr</span>
                                     <span class="related-news__tag place">@item.Category</span>
                                 </div>
                             </div>

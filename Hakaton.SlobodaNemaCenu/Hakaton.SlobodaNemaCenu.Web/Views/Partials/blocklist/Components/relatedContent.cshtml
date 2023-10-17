@@ -16,11 +16,26 @@
                 <!-- Slides -->
                 @foreach(var content in items)
                 {
+
+                    string dayStr = content.Date.Day.ToString();
+                    if (dayStr.Length == 1)
+                    {
+                        dayStr = "0" + dayStr;
+                    }
+
+                    string monthStr = content.Date.Month.ToString();
+                    if (monthStr.Length == 1)
+                    {
+                        monthStr = "0" + monthStr;
+                    }
+
+                    string yearStr = content.Date.Year.ToString();
+
                 <div class="swiper-slide related-news__card">
                     <div class="rated-news__card-top">
                         <img src="@content.PreviewImage.GetCropUrl()" alt="Card img" />
                         <div class="related-news__tags">
-                            <span class="related-news__tag date">@content.Date.ToString("dd/mm/yyyy")</span>
+                                <span class="related-news__tag date">@dayStr/@monthStr/@yearStr</span>
                             <span class="related-news__tag place">@content.Category</span>
                         </div>
                     </div>
