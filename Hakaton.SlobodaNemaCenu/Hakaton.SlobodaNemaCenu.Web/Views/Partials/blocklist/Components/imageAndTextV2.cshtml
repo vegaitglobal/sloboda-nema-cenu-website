@@ -15,12 +15,15 @@
                 <p class="text-small">
                    @item.Description
                 </p>
-                <div class="image-box__comment">
-                    <span>@item.ShortText</span>
-                    <div class="triangle-comment">
-                        <span class="sr-only">Triangle shape</span>
+                @if (!string.IsNullOrWhiteSpace(item.ShortText))
+                {
+                    <div class="image-box__comment">
+                        <span>@item.ShortText</span>
+                        <div class="triangle-comment">
+                            <span class="sr-only">Triangle shape</span>
+                        </div>
                     </div>
-                </div>
+                }
             </div>
         </div>
     </div>
