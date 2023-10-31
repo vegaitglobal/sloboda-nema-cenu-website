@@ -1,50 +1,55 @@
 .h1,
+/** umb_name:Heading 1 */
 h1 {
   font-size: 64px;
   font-weight: 700;
   margin-bottom: 15px;
 }
-
 h2,
+/** umb_name:Heading 2 */
 .h2 {
   font-size: 40px;
   margin-bottom: 20px;
 }
-
 h3,
+/** umb_name:Heading 3 */
 .h3 {
   font-size: 24px;
   margin-bottom: 15px;
 }
-
 h4,
+/** umb_name:Heading 4 */
 .h4 {
   font-size: 20px;
   margin-bottom: 15px;
 }
 h5,
+/** umb_name:Heading 5 */
 .h5 {
   font-size: 18px;
   margin-bottom: 15px;
 }
-
 h6,
+/** umb_name:Heading 6 */
 .h6 {
   font-size: 16px;
   margin-bottom: 15px;
 }
 @media only screen and (max-width: 768px) {
   h1,
+  /** umb_name:Heading 1 */
   .h1 {
     font-size: 32px;
     margin-bottom: 12px;
   }
   h2,
+  /** umb_name:Heading 2 */
   .h2 {
     font-size: 24px;
     margin-bottom: 12px;
   }
   h3,
+  /** umb_name:Heading 3 */
   .h3 {
     font-size: 20px;
     margin-bottom: 12px;
